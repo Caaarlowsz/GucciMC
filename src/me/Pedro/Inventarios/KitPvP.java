@@ -1,5 +1,4 @@
 package me.Pedro.Inventarios;
 
-public class KitPvP
-{
+public class KitPvP {
 }

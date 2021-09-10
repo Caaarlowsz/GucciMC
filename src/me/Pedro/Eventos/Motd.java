@@ -1,14 +1,14 @@
 package me.Pedro.Eventos;
 
 import org.bukkit.event.EventHandler;
-import me.Pedro.Main;
-import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.event.Listener;
+import org.bukkit.event.server.ServerListPingEvent;
 
-public class Motd implements Listener
-{
-    @EventHandler
-    public void Motd(final ServerListPingEvent e) {
-        e.setMotd(Main.getInstance().getConfig().getString("motd").replace("&", "§"));
-    }
+import me.Pedro.Main;
+
+public class Motd implements Listener {
+	@EventHandler
+	public void motd(final ServerListPingEvent e) {
+		e.setMotd(Main.getInstance().getConfig().getString("motd").replace("&", "§"));
+	}
 }
