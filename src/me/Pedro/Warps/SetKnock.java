@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetKnock implements CommandExecutor, Listener {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetKnock(final Main main) {
+	public SetKnock(final GucciPvP main) {
 		SetKnock.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetKnock implements CommandExecutor, Listener {
 		if (cmd.getName().equalsIgnoreCase("setknock") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p2 = (Player) sender;
@@ -31,7 +31,7 @@ public class SetKnock implements CommandExecutor, Listener {
 				SetKnock.plugin.getConfig().set("knock.yaw", (Object) p2.getLocation().getYaw());
 				SetKnock.plugin.getConfig().set("knock.world", (Object) p2.getLocation().getWorld().getName());
 				SetKnock.plugin.saveConfig();
-				p2.sendMessage(String.valueOf(Main.p) + "§7Warp Knock setada com sucesso");
+				p2.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp Knock setada com sucesso");
 			}
 		}
 		return false;

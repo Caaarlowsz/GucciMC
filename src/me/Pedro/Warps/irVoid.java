@@ -12,12 +12,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class irVoid implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public irVoid(final Main main) {
+	public irVoid(final GucciPvP main) {
 		irVoid.plugin = main;
 	}
 

@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetFPS implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetFPS(final Main main) {
+	public SetFPS(final GucciPvP main) {
 		SetFPS.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetFPS implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setfps") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetFPS implements Listener, CommandExecutor {
 				SetFPS.plugin.getConfig().set("fps.yaw", (Object) p.getLocation().getYaw());
 				SetFPS.plugin.getConfig().set("fps.world", (Object) p.getLocation().getWorld().getName());
 				SetFPS.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.p) + "§7Warp FPS setada com sucesso");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp FPS setada com sucesso");
 			}
 			return true;
 		}

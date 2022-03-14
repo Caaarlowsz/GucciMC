@@ -4,11 +4,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Motd implements Listener {
 	@EventHandler
 	public void motd(final ServerListPingEvent e) {
-		e.setMotd(Main.getInstance().getConfig().getString("motd").replace("&", "§"));
+		e.setMotd(GucciPvP.getInstance().getConfig().getString("motd").replace("&", "ï¿½"));
 	}
 }

@@ -9,7 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Chat implements CommandExecutor, Listener {
 	public static boolean c;
@@ -18,29 +18,29 @@ public class Chat implements CommandExecutor, Listener {
 		Chat.c = false;
 	}
 
-	public Chat(final Main main) {
+	public Chat(final GucciPvP main) {
 	}
 
 	public boolean onCommand(final CommandSender Sender, final Command Cmd, final String Label, final String[] Args) {
 		final Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("Chat")) {
 			if (!p.hasPermission("kitpvp.Chat")) {
-				p.sendMessage("§cVoc\u00ea n\u00e3o possui permiss\u00e3o para executar este comando.");
+				p.sendMessage("ï¿½cVoc\u00ea n\u00e3o possui permiss\u00e3o para executar este comando.");
 				return true;
 			}
 			if (Args.length == 0) {
-				p.sendMessage("§9§lCHAT §7- §fComando inv\u00e1lido ou voc\u00ea n\u00e3o possu\u00ed permiss\u00e3o.");
+				p.sendMessage("ï¿½9ï¿½lCHAT ï¿½7- ï¿½fComando inv\u00e1lido ou voc\u00ea n\u00e3o possu\u00ed permiss\u00e3o.");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("Off")) {
 				Chat.c = true;
-				p.sendMessage("§cVoc\u00ea desativou o chat global!");
-				Bukkit.broadcastMessage("§9§lCHAT §7- §fO chat est\u00e1 §3desativo.");
+				p.sendMessage("ï¿½cVoc\u00ea desativou o chat global!");
+				Bukkit.broadcastMessage("ï¿½9ï¿½lCHAT ï¿½7- ï¿½fO chat est\u00e1 ï¿½3desativo.");
 			}
 			if (Args[0].equalsIgnoreCase("On")) {
 				Chat.c = false;
-				p.sendMessage("§aVoc\u00ea ativou o chat global! ");
-				Bukkit.broadcastMessage("§9§lCHAT §7- §fO chat est\u00e1 §3ativo.");
+				p.sendMessage("ï¿½aVoc\u00ea ativou o chat global! ");
+				Bukkit.broadcastMessage("ï¿½9ï¿½lCHAT ï¿½7- ï¿½fO chat est\u00e1 ï¿½3ativo.");
 			}
 		}
 		return false;
@@ -51,7 +51,7 @@ public class Chat implements CommandExecutor, Listener {
 		final Player p = e.getPlayer();
 		if (!p.hasPermission("bits.falarChat") && Chat.c) {
 			e.setCancelled(true);
-			p.sendMessage("§9§lCHAT §7- §fO chat est\u00e1 §3desativo.");
+			p.sendMessage("ï¿½9ï¿½lCHAT ï¿½7- ï¿½fO chat est\u00e1 ï¿½3desativo.");
 		}
 	}
 }

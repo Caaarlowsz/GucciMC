@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.XP.XpM;
 
 public class ScoreboardLibs {
@@ -21,12 +21,12 @@ public class ScoreboardLibs {
 			public List<Entrada> pegarEntradas(final Player p) {
 				return new ConstrutorDeEntrada().emBranco()
 						.proximo("&fKills: &6"
-								+ Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"))
+								+ GucciPvP.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"))
 						.proximo("&fDeaths: &6"
-								+ Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"))
+								+ GucciPvP.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"))
 						.proximo("&fKillstreak: &6").emBranco().proximo("&fKit: &6" + Habilidade.getAbility(p))
 						.proximo("&fRank: &6Unranked").proximo("&fXp: &6" + XpM.getPlayerMoney(p)).emBranco()
-						.proximo("&7/score").proximo("&6§l@FanntNetwork").emBranco().construir();
+						.proximo("&7/score").proximo("&6ï¿½l@FanntNetwork").emBranco().construir();
 			}
 		}).setarIntervaloDeAtualizacao(5L).ativar();
 	}

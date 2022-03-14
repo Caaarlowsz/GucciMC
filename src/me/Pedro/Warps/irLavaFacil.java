@@ -12,12 +12,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class irLavaFacil implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public irLavaFacil(final Main main) {
+	public irLavaFacil(final GucciPvP main) {
 		irLavaFacil.plugin = main;
 	}
 

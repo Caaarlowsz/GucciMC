@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 import me.Pedro.Eventos.Tempo;
 
@@ -29,15 +29,15 @@ public class Smoke implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Voce esta em §cCooldown §a" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Voce esta em ï¿½cCooldown ï¿½a" + Tempo.time(p) + "s");
 				return;
 			}
 			Tempo.add(p, 30);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.SMOKE1.add(p.getName());
-					p.sendMessage("§7Voce ativou sua habilidade");
+					p.sendMessage("ï¿½7Voce ativou sua habilidade");
 					p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 200, 0));
 					p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 0));
 					p.getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 200, 200);
@@ -45,7 +45,7 @@ public class Smoke implements Listener {
 					p.getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 200, 200);
 				}
 			}, 0L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.SMOKE1.remove(p.getName());
@@ -71,7 +71,7 @@ public class Smoke implements Listener {
 					pertos.getWorld().playEffect(pertos.getLocation(), Effect.SMOKE, 200, 200);
 					pertos.getWorld().playEffect(pertos.getLocation(), Effect.SMOKE, 200, 200);
 					pertos.getWorld().playEffect(pertos.getLocation(), Effect.SMOKE, 200, 200);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 						}

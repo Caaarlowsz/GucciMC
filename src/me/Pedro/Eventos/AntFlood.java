@@ -8,7 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class AntFlood implements Listener {
 	public static HashMap<Player, Long> chat;
@@ -17,7 +17,7 @@ public class AntFlood implements Listener {
 		AntFlood.chat = new HashMap<Player, Long>();
 	}
 
-	public AntFlood(final Main main) {
+	public AntFlood(final GucciPvP main) {
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
@@ -39,7 +39,7 @@ public class AntFlood implements Listener {
 			if (AntFlood.chat.get(p) < System.currentTimeMillis() || p.hasPermission("kitpvp.flood")) {
 				return;
 			}
-			p.sendMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS")) + " §7» §aDigite mais devagar!");
+			p.sendMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS")) + " ï¿½7ï¿½ ï¿½aDigite mais devagar!");
 			e.setCancelled(true);
 		}
 	}

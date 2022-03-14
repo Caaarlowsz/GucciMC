@@ -14,12 +14,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class irMdr implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public irMdr(final Main main) {
+	public irMdr(final GucciPvP main) {
 		irMdr.plugin = main;
 	}
 
@@ -42,10 +42,10 @@ public class irMdr implements Listener, CommandExecutor {
 			p.setHealthScale(20.0);
 			final ItemStack pyro2 = new ItemStack(Material.REDSTONE_BLOCK);
 			final ItemMeta metapyro2 = pyro2.getItemMeta();
-			metapyro2.setDisplayName("§b§lmdr §3[LEIA]");
+			metapyro2.setDisplayName("ï¿½bï¿½lmdr ï¿½3[LEIA]");
 			final ArrayList<String> descpyro2 = new ArrayList<String>();
-			descpyro2.add("§a§l* §fO §3evento §finicia quando h\u00e1 staff on.");
-			descpyro2.add("§a§l* §fQuando §acome\u00e7ar, §firemos lhe chamar. :)");
+			descpyro2.add("ï¿½aï¿½l* ï¿½fO ï¿½3evento ï¿½finicia quando h\u00e1 staff on.");
+			descpyro2.add("ï¿½aï¿½l* ï¿½fQuando ï¿½acome\u00e7ar, ï¿½firemos lhe chamar. :)");
 			metapyro2.setLore(descpyro2);
 			pyro2.setItemMeta(metapyro2);
 			p.getInventory().setItem(4, pyro2);

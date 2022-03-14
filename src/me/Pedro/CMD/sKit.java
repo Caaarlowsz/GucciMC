@@ -11,13 +11,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class sKit implements Listener, CommandExecutor {
 	public HashMap<String, ItemStack[]> itens;
 	public HashMap<String, ItemStack[]> armor;
 
-	public sKit(final Main main) {
+	public sKit(final GucciPvP main) {
 		this.itens = new HashMap<String, ItemStack[]>();
 		this.armor = new HashMap<String, ItemStack[]>();
 	}
@@ -35,40 +35,40 @@ public class sKit implements Listener, CommandExecutor {
 		final Player p = (Player) Sender;
 		if (Label.equalsIgnoreCase("criarkit") && Sender instanceof Player) {
 			if (!p.hasPermission("cmd.skit")) {
-				p.sendMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS §7")) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS ï¿½7")) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 				return true;
 			}
 			if (Args.length == 0) {
 				p.sendMessage("       ");
-				p.sendMessage("                §3§lFANNT§fMC §7");
-				p.sendMessage("                  §c§lERROR");
-				p.sendMessage("§f» §bUtilize /criarkit criar [nome]");
-				p.sendMessage("§f» §bUtilize /criarkit aplicar [nome] [blocos]");
+				p.sendMessage("                ï¿½3ï¿½lFANNTï¿½fMC ï¿½7");
+				p.sendMessage("                  ï¿½cï¿½lERROR");
+				p.sendMessage("ï¿½fï¿½ ï¿½bUtilize /criarkit criar [nome]");
+				p.sendMessage("ï¿½fï¿½ ï¿½bUtilize /criarkit aplicar [nome] [blocos]");
 				p.sendMessage("       ");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("criar")) {
 				if (Args.length == 1) {
-					p.sendMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS §7"))
-							+ " §7» §fD\u00favidas? §3/criarkit.");
+					p.sendMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS ï¿½7"))
+							+ " ï¿½7ï¿½ ï¿½fD\u00favidas? ï¿½3/criarkit.");
 					return true;
 				}
 				final String nome = Args[1];
 				this.itens.put(nome, p.getInventory().getContents());
 				this.armor.put(nome, p.getInventory().getArmorContents());
-				p.sendMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS §7")) + " §7» CriarKit: " + Args[1]
-						+ " §acriado!");
+				p.sendMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS ï¿½7")) + " ï¿½7ï¿½ CriarKit: " + Args[1]
+						+ " ï¿½acriado!");
 				return true;
 			} else if (Args[0].equalsIgnoreCase("aplicar")) {
 				if (Args.length <= 2) {
-					p.sendMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS §7"))
-							+ " §7» §fD\u00favidas? §3/criarkit.");
+					p.sendMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS ï¿½7"))
+							+ " ï¿½7ï¿½ ï¿½fD\u00favidas? ï¿½3/criarkit.");
 					return true;
 				}
 				final String nome = Args[1];
 				if (!this.itens.containsKey(nome) && !this.armor.containsKey(nome)) {
-					p.sendMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS §7")) + " §7» §cO Kit §c" + nome
-							+ " §7N\u00e3o Existe");
+					p.sendMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS ï¿½7")) + " ï¿½7ï¿½ ï¿½cO Kit ï¿½c" + nome
+							+ " ï¿½7N\u00e3o Existe");
 					return true;
 				}
 				if (this.isInt(Args[2])) {
@@ -81,8 +81,8 @@ public class sKit implements Listener, CommandExecutor {
 						}
 					}
 					Bukkit.getServer().broadcastMessage("");
-					Bukkit.getServer().broadcastMessage(String.valueOf(String.valueOf("§b§lFANNT§c§lKITS §7"))
-							+ " §7»  CriarKit: " + nome + " §aplicado!");
+					Bukkit.getServer().broadcastMessage(String.valueOf(String.valueOf("ï¿½bï¿½lFANNTï¿½cï¿½lKITS ï¿½7"))
+							+ " ï¿½7ï¿½  CriarKit: " + nome + " ï¿½aplicado!");
 					Bukkit.getServer().broadcastMessage("");
 					return false;
 				}

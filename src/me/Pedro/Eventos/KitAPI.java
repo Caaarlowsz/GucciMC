@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class KitAPI implements Listener {
 	public static ArrayList<String> Foguinho1;
@@ -80,7 +80,7 @@ public class KitAPI implements Listener {
 		KitAPI.refillTestTime = new HashMap<String, Integer>();
 	}
 
-	public KitAPI(final Main main) {
+	public KitAPI(final GucciPvP main) {
 	}
 
 	public static void remove(final Player p) {
@@ -113,7 +113,7 @@ public class KitAPI implements Listener {
 	public static void sopa(final Player p) {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta ksopa = sopa.getItemMeta();
-		ksopa.setDisplayName("§bSopa");
+		ksopa.setDisplayName("ï¿½bSopa");
 		sopa.setItemMeta(ksopa);
 		p.getInventory().addItem(new ItemStack[] { sopa });
 		p.getInventory().addItem(new ItemStack[] { sopa });
@@ -195,10 +195,10 @@ public class KitAPI implements Listener {
 	}
 
 	public static void GiveKit(final Player p) {
-		setitem(p, Material.STONE_SWORD, "§5§lMY NAME IS COMBO", 0, Enchantment.DAMAGE_ALL, 0, false);
+		setitem(p, Material.STONE_SWORD, "ï¿½5ï¿½lMY NAME IS COMBO", 0, Enchantment.DAMAGE_ALL, 0, false);
 		final ItemStack espada1 = new ItemStack(Material.COMPASS);
 		final ItemMeta kespada1 = espada1.getItemMeta();
-		kespada1.setDisplayName("§bBussola");
+		kespada1.setDisplayName("ï¿½bBussola");
 		espada1.setItemMeta(kespada1);
 		p.getInventory().setItem(8, espada1);
 		final ItemStack sopas = new ItemStack(Material.BOWL, 64);

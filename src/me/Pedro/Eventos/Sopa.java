@@ -13,17 +13,17 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Sopa implements Listener {
-	public Sopa(final Main main) {
+	public Sopa(final GucciPvP main) {
 	}
 
 	@EventHandler
 	public void AoTomarSopa(final PlayerInteractEvent e) {
 		final ItemStack pote = new ItemStack(Material.BOWL, 1);
 		final ItemMeta kpote = pote.getItemMeta();
-		kpote.setDisplayName("§8Pote");
+		kpote.setDisplayName("ï¿½8Pote");
 		pote.setItemMeta(kpote);
 		final Damageable hp;
 		final Player p = (Player) (hp = (Damageable) e.getPlayer());
@@ -48,7 +48,7 @@ public class Sopa implements Listener {
 
 	@EventHandler
 	public void onItemDrop(final ItemSpawnEvent e) {
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				e.getEntity().remove();

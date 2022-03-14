@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetGlad implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetGlad(final Main main) {
+	public SetGlad(final GucciPvP main) {
 		SetGlad.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetGlad implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setglad") && sender instanceof Player) {
 			if (!sender.hasPermission("glad.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("glad.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetGlad implements Listener, CommandExecutor {
 				SetGlad.plugin.getConfig().set("glad.yaw", (Object) p.getLocation().getYaw());
 				SetGlad.plugin.getConfig().set("glad.world", (Object) p.getLocation().getWorld().getName());
 				SetGlad.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.p) + "§7Warp glad setada com sucesso");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp glad setada com sucesso");
 			}
 			return true;
 		}

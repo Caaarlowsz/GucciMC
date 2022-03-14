@@ -10,7 +10,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 import me.Pedro.Eventos.Tempo;
 
@@ -25,21 +25,21 @@ public class Foguinho implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Voce esta em §cCooldown §a" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Voce esta em ï¿½cCooldown ï¿½a" + Tempo.time(p) + "s");
 				return;
 			}
 			Raios.arround(p.getLocation());
 			Tempo.add(p, 25);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.Foguinho1.add(p.getName());
-					p.sendMessage("§7Voce ativou sua habilidade");
+					p.sendMessage("ï¿½7Voce ativou sua habilidade");
 					Raios.arround(p.getLocation());
 					p.getKiller();
 				}
 			}, 0L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.Foguinho1.remove(p.getName());
@@ -59,7 +59,7 @@ public class Foguinho implements Listener {
 					((Player) pertos).setFireTicks(150);
 					p.getKiller();
 					((Player) pertos).getKiller();
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 						}

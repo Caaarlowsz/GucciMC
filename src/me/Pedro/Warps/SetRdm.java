@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetRdm implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetRdm(final Main main) {
+	public SetRdm(final GucciPvP main) {
 		SetRdm.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetRdm implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setrdm") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetRdm implements Listener, CommandExecutor {
 				SetRdm.plugin.getConfig().set("rdm.yaw", (Object) p.getLocation().getYaw());
 				SetRdm.plugin.getConfig().set("rdm.world", (Object) p.getLocation().getWorld().getName());
 				SetRdm.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.p) + "§7Warp §b§lRDM §7setada com sucesso");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp ï¿½bï¿½lRDM ï¿½7setada com sucesso");
 			}
 			return true;
 		}

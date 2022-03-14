@@ -5,12 +5,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetMain implements CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetMain(final Main main) {
+	public SetMain(final GucciPvP main) {
 		SetMain.plugin = main;
 	}
 
@@ -19,7 +19,7 @@ public class SetMain implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setmain") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p2 = (Player) sender;
@@ -30,7 +30,7 @@ public class SetMain implements CommandExecutor {
 				SetMain.plugin.getConfig().set("main.yaw", (Object) p2.getLocation().getYaw());
 				SetMain.plugin.getConfig().set("main.world", (Object) p2.getLocation().getWorld().getName());
 				SetMain.plugin.saveConfig();
-				p2.sendMessage(String.valueOf(Main.p) + "§7Warp Main setada com sucesso");
+				p2.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp Main setada com sucesso");
 			}
 			return false;
 		}

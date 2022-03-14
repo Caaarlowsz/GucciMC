@@ -12,17 +12,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Esmeralda implements Listener {
-	public static Main plugin;
+	public static GucciPvP plugin;
 	public static ArrayList<String> Esmeralda;
 
 	static {
 		iLucasUS.Pedro.Lauchers.Esmeralda.Esmeralda = new ArrayList<String>();
 	}
 
-	public Esmeralda(final Main main) {
+	public Esmeralda(final GucciPvP main) {
 		iLucasUS.Pedro.Lauchers.Esmeralda.plugin = main;
 	}
 

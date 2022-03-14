@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.spigotmc.ProtocolInjector;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import net.minecraft.server.v1_7_R4.ChatSerializer;
 import net.minecraft.server.v1_7_R4.IChatBaseComponent;
 import net.minecraft.server.v1_7_R4.Packet;
@@ -21,23 +21,23 @@ public class Tab implements Listener {
 		Tab.VERSION = 47;
 	}
 
-	public Tab(final Main main) {
+	public Tab(final GucciPvP main) {
 	}
 
 	@EventHandler
 	void TabDoServidor(final PlayerJoinEvent e) {
 		final Player jogador = e.getPlayer();
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncRepeatingTask(GucciPvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				final PlayerConnection connect = ((CraftPlayer) jogador).getHandle().playerConnection;
 				final IChatBaseComponent top = ChatSerializer
-						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '      " + Main.p
-								+ " §7FanntNetwork - KITPVP " + "\n       '}");
+						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '      " + GucciPvP.p
+								+ " ï¿½7FanntNetwork - KITPVP " + "\n       '}");
 				final IChatBaseComponent bottom = ChatSerializer
-						.a("{'extra': [{'color': 'aqua', 'text': '\n §7Jogadores: §c"
-								+ Bukkit.getServer().getOnlinePlayers().length + " §7|Capacidade: §c"
-								+ Bukkit.getMaxPlayers() + "\n§7 "
+						.a("{'extra': [{'color': 'aqua', 'text': '\n ï¿½7Jogadores: ï¿½c"
+								+ Bukkit.getServer().getOnlinePlayers().length + " ï¿½7|Capacidade: ï¿½c"
+								+ Bukkit.getMaxPlayers() + "\nï¿½7 "
 								+ "', 'underline': 'true'}], 'color': 'gold', 'text': ''}");
 				if (((CraftPlayer) jogador).getHandle().playerConnection.networkManager.getVersion() < Tab.VERSION) {
 					return;

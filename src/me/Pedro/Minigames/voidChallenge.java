@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 
 public class voidChallenge {
@@ -15,7 +15,7 @@ public class voidChallenge {
 
 			public void run() {
 				if (this.seconds > 0) {
-					p.sendMessage(String.valueOf(Main.p) + "§7Minigame Iniciando em " + this.seconds + " segundos!");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Minigame Iniciando em " + this.seconds + " segundos!");
 					--this.seconds;
 					return;
 				}
@@ -23,7 +23,7 @@ public class voidChallenge {
 					this.seconds = -1;
 					p.getInventory().clear();
 					p.teleport(new Location(p.getWorld(), 0.0, -5.0, 0.0));
-					p.sendMessage(String.valueOf(Main.p) + "§7O Desafio come\u00e7ou!!!");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7O Desafio come\u00e7ou!!!");
 					KitAPI.sopa(p);
 					KitAPI.voidChallenge.add(p.getName());
 				}
@@ -33,7 +33,7 @@ public class voidChallenge {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 20L);
+		}.runTaskTimer((Plugin) GucciPvP.instance, 0L, 20L);
 	}
 
 	public static int getTime(final Player p) {

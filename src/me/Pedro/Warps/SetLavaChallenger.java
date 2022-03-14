@@ -5,12 +5,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetLavaChallenger implements CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetLavaChallenger(final Main main) {
+	public SetLavaChallenger(final GucciPvP main) {
 		SetLavaChallenger.plugin = main;
 	}
 
@@ -19,7 +19,7 @@ public class SetLavaChallenger implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setchallenge") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p2 = (Player) sender;
@@ -31,7 +31,7 @@ public class SetLavaChallenger implements CommandExecutor {
 				SetLavaChallenger.plugin.getConfig().set("challenge.world",
 						(Object) p2.getLocation().getWorld().getName());
 				SetLavaChallenger.plugin.saveConfig();
-				p2.sendMessage(String.valueOf(Main.p) + "§7Warp Challenge setada com sucesso");
+				p2.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp Challenge setada com sucesso");
 			}
 		}
 		return false;

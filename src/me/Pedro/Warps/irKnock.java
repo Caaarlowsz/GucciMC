@@ -14,13 +14,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 
 public class irKnock implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public irKnock(final Main main) {
+	public irKnock(final GucciPvP main) {
 		irKnock.plugin = main;
 	}
 
@@ -41,7 +41,7 @@ public class irKnock implements Listener, CommandExecutor {
 			for (final PotionEffect effect : p.getActivePotionEffects()) {
 				final ItemStack espada = new ItemStack(Material.STICK);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§6KNOCK!");
+				espadameta.setDisplayName("ï¿½6KNOCK!");
 				espada.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
 				p.getInventory().setItem(0, espada);
 				p.setFireTicks(0);

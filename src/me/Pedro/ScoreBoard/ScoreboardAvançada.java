@@ -1,25 +1,12 @@
 package me.Pedro.ScoreBoard;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Team;
-
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
-
-import me.Pedro.Main;
 
 public class ScoreboardAvan\u00e7ada implements Scoreboard {
 	private static int QUANTIDADE_DE_TIME;

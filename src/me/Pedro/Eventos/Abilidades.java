@@ -50,7 +50,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Ultis.ParticleEffect;
 import me.Pedro.Ultis.Raios;
 import net.minecraft.server.v1_7_R4.EntityHuman;
@@ -95,7 +95,7 @@ public class Abilidades implements Listener {
 		countdown_id = new HashMap<Player, Integer>();
 	}
 
-	public Abilidades(final Main main) {
+	public Abilidades(final GucciPvP main) {
 		this.c62 = new HashMap<Player, Item>();
 		this.qswqsq = new ArrayList<Player>();
 		this.Soltou = new ArrayList<Snowball>();
@@ -115,12 +115,12 @@ public class Abilidades implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 				return;
 			}
 			Tempo.add(p, 60);
 			KitAPI.Forcefielddano.add(p.getName());
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.Forcefielddano.remove(p.getName());
@@ -139,8 +139,8 @@ public class Abilidades implements Listener {
 						((Player) pertos).damage(3.0);
 					}
 					pertos.setVelocity(new Vector(0.1, 0.0, 0.1));
-					((Player) pertos).sendMessage(String.valueOf(Main.p) + "§7A um forcefield te §cbatendo");
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					((Player) pertos).sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7A um forcefield te ï¿½cbatendo");
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 						}
@@ -160,7 +160,7 @@ public class Abilidades implements Listener {
 				this.c62.get(e.getPlayer()).remove();
 				this.c62.remove(e.getPlayer());
 				e.getPlayer().getItemInHand().setType(Material.SLIME_BALL);
-				e.getPlayer().sendMessage(String.valueOf(Main.p) + "§7Voce removeu sua bomba!");
+				e.getPlayer().sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce removeu sua bomba!");
 				KitAPI.C4.remove(e.getPlayer().getName());
 			} else {
 				this.c62.get(e.getPlayer()).getLocation().getWorld()
@@ -168,14 +168,14 @@ public class Abilidades implements Listener {
 				this.c62.get(e.getPlayer()).remove();
 				this.c62.remove(e.getPlayer());
 				e.getPlayer().getItemInHand().setType(Material.SLIME_BALL);
-				e.getPlayer().sendMessage(String.valueOf(Main.p) + "§7Kabum!");
+				e.getPlayer().sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Kabum!");
 				KitAPI.C4.remove(e.getPlayer().getName());
 				Abilidades.gayddrf.add(e.getPlayer().getName());
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Abilidades.gayddrf.remove(e.getPlayer().getName());
-						e.getPlayer().sendMessage(String.valueOf(Main.p) + "§7Seu cooldown acabou!");
+						e.getPlayer().sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Seu cooldown acabou!");
 					}
 				}, 200L);
 			}
@@ -192,12 +192,12 @@ public class Abilidades implements Listener {
 					new ItemStack(Material.TNT));
 			bomba.setVelocity(e.getPlayer().getLocation().getDirection().multiply(1.2));
 			this.c62.put(e.getPlayer(), bomba);
-			e.getPlayer().sendMessage(String.valueOf(Main.p) + "§7Voce lancou sua bomba!");
+			e.getPlayer().sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce lancou sua bomba!");
 			e.getPlayer().getItemInHand().setType(Material.WOOD_BUTTON);
 			e.getPlayer().updateInventory();
 			KitAPI.C4.add(e.getPlayer().getName());
 			this.qswqsq.add(e.getPlayer());
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Abilidades.this.qswqsq.remove(e.getPlayer());
@@ -302,7 +302,7 @@ public class Abilidades implements Listener {
 				final Vector Ferro = p.getLocation().getDirection().normalize().multiply(55);
 				final Snowball FerroH = (Snowball) p.launchProjectile(Snowball.class);
 				FerroH.setVelocity(Ferro);
-				FerroH.setMetadata("Ar", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
+				FerroH.setMetadata("Ar", (MetadataValue) new FixedMetadataValue(GucciPvP.plugin, (Object) true));
 				final Location pegou = p.getEyeLocation();
 				final BlockIterator Ferrao = new BlockIterator(pegou, 0.0, 40);
 				while (Ferrao.hasNext()) {
@@ -315,7 +315,7 @@ public class Abilidades implements Listener {
 					p.playSound(p.getLocation(), Sound.STEP_WOOL, 4.5f, 4.5f);
 					p.getWorld().playEffect(Ferrao2, camelo, 35);
 				}
-				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (KitAPI.Tempo.contains(p)) {
@@ -324,7 +324,7 @@ public class Abilidades implements Listener {
 					}
 				}, 250L);
 			} else {
-				p.sendMessage("§7Cooldown");
+				p.sendMessage("ï¿½7Cooldown");
 			}
 		}
 	}
@@ -353,7 +353,7 @@ public class Abilidades implements Listener {
 				final Vector Agua = p.getLocation().getDirection().normalize().multiply(55);
 				final Snowball AguaH = (Snowball) p.launchProjectile(Snowball.class);
 				AguaH.setVelocity(Agua);
-				AguaH.setMetadata("Agua", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
+				AguaH.setMetadata("Agua", (MetadataValue) new FixedMetadataValue(GucciPvP.plugin, (Object) true));
 				final Location pegou = p.getEyeLocation();
 				final BlockIterator Aguao = new BlockIterator(pegou, 0.0, 40);
 				while (Aguao.hasNext()) {
@@ -366,7 +366,7 @@ public class Abilidades implements Listener {
 					p.playSound(p.getLocation(), Sound.STEP_WOOD, 4.5f, 4.5f);
 					p.getWorld().playEffect(Aguao2, camelo, 9);
 				}
-				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (KitAPI.Tempo.contains(p)) {
@@ -375,7 +375,7 @@ public class Abilidades implements Listener {
 					}
 				}, 250L);
 			} else {
-				p.sendMessage("§7Cooldown");
+				p.sendMessage("ï¿½7Cooldown");
 			}
 		}
 	}
@@ -407,7 +407,7 @@ public class Abilidades implements Listener {
 				final Vector Fogo = p.getLocation().getDirection().normalize().multiply(55);
 				final Snowball FogoH = (Snowball) p.launchProjectile(Snowball.class);
 				FogoH.setVelocity(Fogo);
-				FogoH.setMetadata("Fogo", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
+				FogoH.setMetadata("Fogo", (MetadataValue) new FixedMetadataValue(GucciPvP.plugin, (Object) true));
 				final Location pegou = p.getEyeLocation();
 				final BlockIterator Fogao = new BlockIterator(pegou, 0.0, 40);
 				while (Fogao.hasNext()) {
@@ -420,7 +420,7 @@ public class Abilidades implements Listener {
 					p.playSound(p.getLocation(), Sound.FIRE, 4.5f, 4.5f);
 					p.getWorld().playEffect(Fogao2, camelo, 10);
 				}
-				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (KitAPI.Tempo.contains(p)) {
@@ -429,7 +429,7 @@ public class Abilidades implements Listener {
 					}
 				}, 250L);
 			} else {
-				p.sendMessage("§7Cooldown");
+				p.sendMessage("ï¿½7Cooldown");
 			}
 		}
 	}
@@ -458,7 +458,7 @@ public class Abilidades implements Listener {
 				final Vector Terra = p.getLocation().getDirection().normalize().multiply(55);
 				final Snowball TerraH = (Snowball) p.launchProjectile(Snowball.class);
 				TerraH.setVelocity(Terra);
-				TerraH.setMetadata("Terra", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
+				TerraH.setMetadata("Terra", (MetadataValue) new FixedMetadataValue(GucciPvP.plugin, (Object) true));
 				final Location pegou = p.getEyeLocation();
 				final BlockIterator Terrao = new BlockIterator(pegou, 0.0, 40);
 				while (Terrao.hasNext()) {
@@ -471,7 +471,7 @@ public class Abilidades implements Listener {
 					p.playSound(p.getLocation(), Sound.STEP_GRASS, 4.5f, 4.5f);
 					p.getWorld().playEffect(Terrao2, camelo, 2);
 				}
-				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (KitAPI.Tempo.contains(p)) {
@@ -480,7 +480,7 @@ public class Abilidades implements Listener {
 					}
 				}, 250L);
 			} else {
-				p.sendMessage("§7Cooldown");
+				p.sendMessage("ï¿½7Cooldown");
 			}
 		}
 	}
@@ -509,7 +509,7 @@ public class Abilidades implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 				return;
 			}
 			final Vector vector = p.getEyeLocation().getDirection();
@@ -565,7 +565,7 @@ public class Abilidades implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 				return;
 			}
 			Tempo.add(p, 25);
@@ -601,7 +601,7 @@ public class Abilidades implements Listener {
 			p.getInventory().setLeggings(Calss);
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getInventory().setArmorContents((ItemStack[]) null);
@@ -629,7 +629,7 @@ public class Abilidades implements Listener {
 		final Player p = e.getPlayer();
 		final Player ent = (Player) e.getRightClicked();
 		if (Tempo.cadd(p)) {
-			p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+			p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 			return;
 		}
 		if (KitAPI.WaterBender.contains(p.getName()) && p.getItemInHand().getType() == Material.LAPIS_BLOCK) {
@@ -637,7 +637,7 @@ public class Abilidades implements Listener {
 			Raios.kitaguala(ent.getLocation());
 			Tempo.add(p, 30);
 			ent.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 50, 200));
-			Bukkit.getScheduler().scheduleAsyncDelayedTask((Plugin) Main.instance, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleAsyncDelayedTask((Plugin) GucciPvP.instance, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Abilidades.wateratack.remove(ent.getName());
@@ -664,7 +664,7 @@ public class Abilidades implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 				return;
 			}
 			p.setVelocity(p.getEyeLocation().getDirection().multiply(this.boost).add(new Vector(0, 0, 0)));
@@ -672,56 +672,56 @@ public class Abilidades implements Listener {
 			final Location loc = p.getLocation();
 			Abilidades.velotrol.add(p.getName());
 			Abilidades.fall.add(p.getName());
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 15L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 14L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 13L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 12L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 11L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 10L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 9L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getWorld().createExplosion(loc, 2.0f);
 					Abilidades.fall.remove(p.getName());
 				}
 			}, 30L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Abilidades.velotrol.remove(p.getName());
@@ -742,7 +742,7 @@ public class Abilidades implements Listener {
 				event.setCancelled(true);
 			}
 			if (Tempo.cadd(p)) {
-				p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+				p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 			} else {
 				final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 				final Fireball boladenve = (Fireball) p.launchProjectile(Fireball.class);
@@ -768,7 +768,7 @@ public class Abilidades implements Listener {
 				return;
 			}
 			Abilidades.cantkanga.add((Player) e.getEntity());
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Abilidades.cantkanga.remove(e.getEntity());
@@ -941,7 +941,7 @@ public class Abilidades implements Listener {
 			return;
 		}
 		if (Tempo.cadd(p)) {
-			p.sendMessage("§7Cooldown §c" + Tempo.time(p) + "s");
+			p.sendMessage("ï¿½7Cooldown ï¿½c" + Tempo.time(p) + "s");
 			return;
 		}
 		Tempo.add(p, 30);
@@ -955,14 +955,14 @@ public class Abilidades implements Listener {
 		bat1.setVelocity(p.getEyeLocation().getDirection().multiply(5.0));
 		bat2.setVelocity(p.getEyeLocation().getDirection().multiply(5.0));
 		bat3.setVelocity(p.getEyeLocation().getDirection().multiply(5.0));
-		bat1.setCustomName("§c§lasdsdk");
-		bat2.setCustomName("§c§lasdsdk");
+		bat1.setCustomName("ï¿½cï¿½lasdsdk");
+		bat2.setCustomName("ï¿½cï¿½lasdsdk");
 		bat3.setCustomName("Batman");
 		bat1.setCustomNameVisible(true);
 		bat2.setCustomNameVisible(true);
 		bat3.setCustomNameVisible(true);
 		p.getWorld().playSound(p.getLocation(), Sound.BAT_HURT, 5.0f, 5.0f);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				p.getWorld().createExplosion(bat1.getLocation(), 1.0f);
@@ -1020,41 +1020,41 @@ public class Abilidades implements Listener {
 		if (e.isSneaking()) {
 			if (KitAPI.FireBoost.contains(p.getName())) {
 				this.shift.put(p, System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(15L));
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (p.isSneaking()) {
-							p.sendMessage(String.valueOf(Main.p) + "§7Carregando Kit §c§l25 §b%");
+							p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Carregando Kit ï¿½cï¿½l25 ï¿½b%");
 							return;
 						}
 						Abilidades.this.shift.remove(p);
 					}
 				}, (long) (this.tickForSec(10) / 4));
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (p.isSneaking()) {
-							p.sendMessage(String.valueOf(Main.p) + "§7Carregando Kit §c§l50 §b%");
+							p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Carregando Kit ï¿½cï¿½l50 ï¿½b%");
 							return;
 						}
 						Abilidades.this.shift.remove(p);
 					}
 				}, (long) (this.tickForSec(10) / 2));
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (p.isSneaking()) {
-							p.sendMessage(String.valueOf(Main.p) + " §7Carregando Kit §c§l75 §b%");
+							p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Carregando Kit ï¿½cï¿½l75 ï¿½b%");
 							return;
 						}
 						Abilidades.this.shift.remove(p);
 					}
 				}, (long) (this.tickForSec(10) / 2 + 50));
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (p.isSneaking()) {
-							p.sendMessage(String.valueOf(Main.p) + " §7Kit Carregado com §c§lSucesso");
+							p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Kit Carregado com ï¿½cï¿½lSucesso");
 							p.setVelocity(p.getLocation().getDirection().setY(8));
 							KitAPI.FireBoost.add(p.getName());
 							Abilidades.this.shift.remove(p);
@@ -1065,18 +1065,18 @@ public class Abilidades implements Listener {
 				}, (long) this.tickForSec(10));
 			} else if (this.shift.containsKey(p)) {
 				this.shift.remove(p);
-				p.sendMessage(String.valueOf(Main.p) + "§7Carregamento Cancelado");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Carregamento Cancelado");
 			}
 		}
 	}
 
 	public static void retirar(final Player p) {
-		Bukkit.getScheduler().scheduleAsyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleAsyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				KitAPI.Tempo.remove(p);
-				p.sendMessage(String.valueOf(Main.p)
-						+ "§7§l Seu §c§lCooldown §7§lAcabou Ja Pode Usar o Kit §c§lFireBoost §7§lNovamente");
+				p.sendMessage(String.valueOf(GucciPvP.p)
+						+ "ï¿½7ï¿½l Seu ï¿½cï¿½lCooldown ï¿½7ï¿½lAcabou Ja Pode Usar o Kit ï¿½cï¿½lFireBoost ï¿½7ï¿½lNovamente");
 			}
 		}, 1000L);
 	}
@@ -1124,7 +1124,7 @@ public class Abilidades implements Listener {
 
 	public static void radarEffect(final Player p) {
 		if (!Abilidades.countdown_id.containsKey(p)) {
-			final int i = Bukkit.getServer().getScheduler().runTaskTimer(Main.plugin, (Runnable) new Runnable() {
+			final int i = Bukkit.getServer().getScheduler().runTaskTimer(GucciPvP.plugin, (Runnable) new Runnable() {
 				float j = 100.0f;
 
 				@Override
@@ -1157,7 +1157,7 @@ public class Abilidades implements Listener {
 	}
 
 	public static void removecu(final Player p) {
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				Abilidades.stopRotation(p);
@@ -1172,7 +1172,7 @@ public class Abilidades implements Listener {
 			final Player d = (Player) e.getDamager();
 			if (KitAPI.Anchor.contains(d.getName())) {
 				p.setVelocity(new Vector());
-				Bukkit.getServer().getScheduler().scheduleAsyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleAsyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setVelocity(new Vector());
@@ -1188,7 +1188,7 @@ public class Abilidades implements Listener {
 			final Player p = (Player) e.getEntity();
 			if (KitAPI.Anchor.contains(p.getName())) {
 				p.setVelocity(new Vector());
-				Bukkit.getServer().getScheduler().scheduleAsyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleAsyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setVelocity(new Vector());
@@ -1217,10 +1217,10 @@ public class Abilidades implements Listener {
 					}
 					if (plr.isSneaking()) {
 						plr.damage(6.0, (Entity) p);
-						plr.sendMessage("§7Voc\u00ea foi stompado por:§c " + p.getName());
+						plr.sendMessage("ï¿½7Voc\u00ea foi stompado por:ï¿½c " + p.getName());
 					} else {
 						plr.damage(e.getDamage(), (Entity) p);
-						plr.sendMessage("§7Voc\u00ea foi stompado por:§c " + p.getName());
+						plr.sendMessage("ï¿½7Voc\u00ea foi stompado por:ï¿½c " + p.getName());
 					}
 				}
 			}

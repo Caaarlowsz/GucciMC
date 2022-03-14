@@ -6,22 +6,22 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Status implements Listener {
-	public Status(final Main main) {
+	public Status(final GucciPvP main) {
 	}
 
 	@EventHandler
 	void aoLogar(final PlayerJoinEvent evento) {
 		final Player jogador = evento.getPlayer();
-		if (Main.plugin.getConfig().get("status." + jogador.getName().toLowerCase() + ".kills") == null) {
-			Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) 0);
-			Main.plugin.saveConfig();
+		if (GucciPvP.plugin.getConfig().get("status." + jogador.getName().toLowerCase() + ".kills") == null) {
+			GucciPvP.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) 0);
+			GucciPvP.plugin.saveConfig();
 		}
-		if (Main.plugin.getConfig().get("status." + jogador.getName().toLowerCase() + ".mortes") == null) {
-			Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) 0);
-			Main.plugin.saveConfig();
+		if (GucciPvP.plugin.getConfig().get("status." + jogador.getName().toLowerCase() + ".mortes") == null) {
+			GucciPvP.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) 0);
+			GucciPvP.plugin.saveConfig();
 		}
 	}
 
@@ -29,9 +29,9 @@ public class Status implements Listener {
 	void aoMatar(final PlayerDeathEvent evento) {
 		if (evento.getEntity().getKiller() instanceof Player) {
 			final Player jogador = evento.getEntity().getKiller();
-			final int kills = Main.plugin.getConfig().getInt("status." + jogador.getName().toLowerCase() + ".kills");
-			Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) (kills + 1));
-			Main.plugin.saveConfig();
+			final int kills = GucciPvP.plugin.getConfig().getInt("status." + jogador.getName().toLowerCase() + ".kills");
+			GucciPvP.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) (kills + 1));
+			GucciPvP.plugin.saveConfig();
 		}
 	}
 
@@ -39,9 +39,9 @@ public class Status implements Listener {
 	void aoMorrer(final PlayerDeathEvent evento) {
 		if (evento.getEntity() instanceof Player) {
 			final Player jogador = evento.getEntity();
-			final int mortes = Main.plugin.getConfig().getInt("status." + jogador.getName().toLowerCase() + ".mortes");
-			Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) (mortes + 1));
-			Main.plugin.saveConfig();
+			final int mortes = GucciPvP.plugin.getConfig().getInt("status." + jogador.getName().toLowerCase() + ".mortes");
+			GucciPvP.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) (mortes + 1));
+			GucciPvP.plugin.saveConfig();
 		}
 	}
 }

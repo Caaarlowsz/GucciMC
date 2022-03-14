@@ -5,12 +5,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetVoidChallenger implements CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetVoidChallenger(final Main main) {
+	public SetVoidChallenger(final GucciPvP main) {
 		SetVoidChallenger.plugin = main;
 	}
 
@@ -19,7 +19,7 @@ public class SetVoidChallenger implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setvoid") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p2 = (Player) sender;
@@ -30,7 +30,7 @@ public class SetVoidChallenger implements CommandExecutor {
 				SetVoidChallenger.plugin.getConfig().set("void.yaw", (Object) p2.getLocation().getYaw());
 				SetVoidChallenger.plugin.getConfig().set("void.world", (Object) p2.getLocation().getWorld().getName());
 				SetVoidChallenger.plugin.saveConfig();
-				p2.sendMessage(String.valueOf(Main.p) + "§7Warp void setada com sucesso");
+				p2.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp void setada com sucesso");
 			}
 		}
 		return false;

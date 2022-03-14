@@ -16,7 +16,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.ScoreBoard.Habilidade;
 
 public class MenuDeWarps implements Listener {
@@ -33,33 +33,33 @@ public class MenuDeWarps implements Listener {
 	}
 
 	public static void Warps(final Player p) {
-		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 27, "§3§lWarps");
-		SetarItem(inv, p, Material.COMPASS, 1, 0, "§b§lTREINO", "§c- §7Clique para ver as warps de treino !", 11);
-		SetarItem(inv, p, Material.TRIPWIRE_HOOK, 1, 0, "§cFechar", "§c- §7Fechar o menu !", 4);
-		SetarItem(inv, p, Material.CAKE, 1, 0, "§b§lEVENTOS", "§c- §7Clique para ver as warps de treino !", 15);
+		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 27, "ï¿½3ï¿½lWarps");
+		SetarItem(inv, p, Material.COMPASS, 1, 0, "ï¿½bï¿½lTREINO", "ï¿½c- ï¿½7Clique para ver as warps de treino !", 11);
+		SetarItem(inv, p, Material.TRIPWIRE_HOOK, 1, 0, "ï¿½cFechar", "ï¿½c- ï¿½7Fechar o menu !", 4);
+		SetarItem(inv, p, Material.CAKE, 1, 0, "ï¿½bï¿½lEVENTOS", "ï¿½c- ï¿½7Clique para ver as warps de treino !", 15);
 		p.openInventory(inv);
 	}
 
 	public static void Treino(final Player p) {
-		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 27, "§b§lTreino");
-		SetarItem(inv, p, Material.TRIPWIRE_HOOK, 1, 0, "§cVoltar", "§c- §7Voltar ao menu de warps !", 4);
-		SetarItem(inv, p, Material.GLASS, 1, 0, "§b§lFps", "§c- §7Clique para ir a warp fps !", 10);
-		SetarItem(inv, p, Material.POTION, 1, 0, "§b§lMain", "§c- §7Clique para ir a warp main !", 11);
-		SetarItem(inv, p, Material.BEDROCK, 1, 0, "§b§lVoidChallenger", "§c- §7Clique para ir a warp void challenge!",
+		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 27, "ï¿½bï¿½lTreino");
+		SetarItem(inv, p, Material.TRIPWIRE_HOOK, 1, 0, "ï¿½cVoltar", "ï¿½c- ï¿½7Voltar ao menu de warps !", 4);
+		SetarItem(inv, p, Material.GLASS, 1, 0, "ï¿½bï¿½lFps", "ï¿½c- ï¿½7Clique para ir a warp fps !", 10);
+		SetarItem(inv, p, Material.POTION, 1, 0, "ï¿½bï¿½lMain", "ï¿½c- ï¿½7Clique para ir a warp main !", 11);
+		SetarItem(inv, p, Material.BEDROCK, 1, 0, "ï¿½bï¿½lVoidChallenger", "ï¿½c- ï¿½7Clique para ir a warp void challenge!",
 				11);
-		SetarItem(inv, p, Material.LAVA_BUCKET, 1, 0, "§b§lLavaChallenger",
-				"§c- §7Clique para ir a warp lavachallenger !", 15);
-		SetarItem(inv, p, Material.BLAZE_ROD, 1, 0, "§b§l1v1", "§c- §7Clique para ir a warp 1v1 !", 16);
-		SetarItem(inv, p, Material.IRON_FENCE, 1, 0, "§b§lGladiator ", "§c- §7Manuten\u00e7\u00e3o !", 22);
+		SetarItem(inv, p, Material.LAVA_BUCKET, 1, 0, "ï¿½bï¿½lLavaChallenger",
+				"ï¿½c- ï¿½7Clique para ir a warp lavachallenger !", 15);
+		SetarItem(inv, p, Material.BLAZE_ROD, 1, 0, "ï¿½bï¿½l1v1", "ï¿½c- ï¿½7Clique para ir a warp 1v1 !", 16);
+		SetarItem(inv, p, Material.IRON_FENCE, 1, 0, "ï¿½bï¿½lGladiator ", "ï¿½c- ï¿½7Manuten\u00e7\u00e3o !", 22);
 		p.openInventory(inv);
 	}
 
 	public static void Eventos(final Player p) {
-		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 27, "§b§lEventos");
-		SetarItem(inv, p, Material.TRIPWIRE_HOOK, 1, 0, "§cVoltar", "§c- §7Voltar ao menu de warps !", 4);
-		SetarItem(inv, p, Material.IRON_CHESTPLATE, 1, 0, "§b§lSkit", "§c- §7Clique para ir ao evento skit !", 11);
-		SetarItem(inv, p, Material.STAINED_CLAY, 1, 14, "§b§lMdr", "§c- §7Clique para ir ao evento mdr !", 15);
-		SetarItem(inv, p, Material.DIAMOND_SWORD, 1, 0, "§b§lRdm", "§c- §7Clique para ir ao evento rdm !", 22);
+		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 27, "ï¿½bï¿½lEventos");
+		SetarItem(inv, p, Material.TRIPWIRE_HOOK, 1, 0, "ï¿½cVoltar", "ï¿½c- ï¿½7Voltar ao menu de warps !", 4);
+		SetarItem(inv, p, Material.IRON_CHESTPLATE, 1, 0, "ï¿½bï¿½lSkit", "ï¿½c- ï¿½7Clique para ir ao evento skit !", 11);
+		SetarItem(inv, p, Material.STAINED_CLAY, 1, 14, "ï¿½bï¿½lMdr", "ï¿½c- ï¿½7Clique para ir ao evento mdr !", 15);
+		SetarItem(inv, p, Material.DIAMOND_SWORD, 1, 0, "ï¿½bï¿½lRdm", "ï¿½c- ï¿½7Clique para ir ao evento rdm !", 22);
 		p.openInventory(inv);
 	}
 
@@ -78,7 +78,7 @@ public class MenuDeWarps implements Listener {
 	@EventHandler
 	public static void ClicarWarps(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getName().equalsIgnoreCase("§3§lWarps")) {
+		if (e.getInventory().getName().equalsIgnoreCase("ï¿½3ï¿½lWarps")) {
 			if (e.getCurrentItem() == null) {
 				e.setCancelled(true);
 				return;
@@ -93,12 +93,12 @@ public class MenuDeWarps implements Listener {
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lTREINO")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lTREINO")) {
 				Treino(p);
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lEVENTOS")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lEVENTOS")) {
 				Eventos(p);
 				e.setCancelled(true);
 				return;
@@ -111,7 +111,7 @@ public class MenuDeWarps implements Listener {
 	@EventHandler
 	public static void ClicarTreino(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getName().equalsIgnoreCase("§b§lTreino")) {
+		if (e.getInventory().getName().equalsIgnoreCase("ï¿½bï¿½lTreino")) {
 			if (e.getCurrentItem() == null) {
 				e.setCancelled(true);
 				return;
@@ -126,31 +126,31 @@ public class MenuDeWarps implements Listener {
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lFps")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lFps")) {
 				p.chat("/fps");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lMain")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lMain")) {
 				p.chat("/main");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lVoidChallenger")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lVoidChallenger")) {
 				p.chat("/void");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lLavaChallenger")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lLavaChallenger")) {
 				p.chat("/challenge");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§l1v1")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½l1v1")) {
 				p.chat("/1v1");
 				p.closeInventory();
 				e.setCancelled(true);
@@ -164,7 +164,7 @@ public class MenuDeWarps implements Listener {
 	@EventHandler
 	public static void ClicarEventos(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getName().equalsIgnoreCase("§b§lEventos")) {
+		if (e.getInventory().getName().equalsIgnoreCase("ï¿½bï¿½lEventos")) {
 			if (e.getCurrentItem() == null) {
 				e.setCancelled(true);
 				return;
@@ -174,20 +174,20 @@ public class MenuDeWarps implements Listener {
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lMdr")) {
-				p.sendMessage(String.valueOf(Main.p) + " §7Warp n\u00e3o §cencontrada §7!");
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lMdr")) {
+				p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Warp n\u00e3o ï¿½cencontrada ï¿½7!");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lRdm")) {
-				p.sendMessage(String.valueOf(Main.p) + " §7Warp n\u00e3o §cencontrada §7!");
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lRdm")) {
+				p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Warp n\u00e3o ï¿½cencontrada ï¿½7!");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lSkit")) {
-				p.sendMessage(String.valueOf(Main.p) + " §7Warp n\u00e3o §cencontrada §7!");
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lSkit")) {
+				p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Warp n\u00e3o ï¿½cencontrada ï¿½7!");
 				p.closeInventory();
 				e.setCancelled(true);
 				return;

@@ -15,7 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class AutoSoup implements CommandExecutor, Listener {
 	public static HashMap<String, ItemStack[]> saveinv;
@@ -32,7 +32,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 		AutoSoup.armadura = new HashMap<String, ItemStack[]>();
 	}
 
-	public AutoSoup(final Main main) {
+	public AutoSoup(final GucciPvP main) {
 		this.sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		this.msopa = this.sopa.getItemMeta();
 		this.sopa1 = new ItemStack(Material.MUSHROOM_SOUP);
@@ -45,22 +45,22 @@ public class AutoSoup implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("autosoup")) {
 			if (!p.hasPermission("slicemc.admin")) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem premiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem premiss\u00e3o !");
 				return true;
 			}
 			if (args.length == 0) {
-				sender.sendMessage(String.valueOf(String.valueOf(Main.p))
-						+ " §7Comando incorreto! Use: /§3Autosoup §7(§3nick§7) !");
+				sender.sendMessage(String.valueOf(String.valueOf(GucciPvP.p))
+						+ " ï¿½7Comando incorreto! Use: /ï¿½3Autosoup ï¿½7(ï¿½3nickï¿½7) !");
 				return true;
 			}
 			final Player target = Bukkit.getPlayerExact(args[0]);
 			if (target == null || !(target instanceof Player)) {
-				sender.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Este jogador se encontra offline !");
+				sender.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Este jogador se encontra offline !");
 				return true;
 			}
 			if (target.getName() == p.getName()) {
 				p.sendMessage(
-						String.valueOf(Main.p) + " §7Voc\u00ea n\u00e3o pode usar o autosoup em voc\u00ea mesmo !");
+						String.valueOf(GucciPvP.p) + " ï¿½7Voc\u00ea n\u00e3o pode usar o autosoup em voc\u00ea mesmo !");
 				return true;
 			}
 			final Player testando = p.getServer().getPlayer(args[0]);
@@ -70,7 +70,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 			testando.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 70, 999));
 			testando.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 70, 999));
 			this.sopa.setItemMeta(this.msopa);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					testando.getInventory().clear();
@@ -80,7 +80,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 					testando.getInventory().setItem(16, AutoSoup.this.sopa2);
 				}
 			}, 20L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					testando.getInventory().clear();

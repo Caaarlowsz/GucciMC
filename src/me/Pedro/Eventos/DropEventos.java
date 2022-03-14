@@ -10,12 +10,12 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.plugin.Plugin;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class DropEventos implements Listener {
 	@EventHandler
 	public void onItemDrop(final ItemSpawnEvent e) {
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(),
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.getInstance(),
 				(Runnable) new Runnable() {
 					@Override
 					public void run() {

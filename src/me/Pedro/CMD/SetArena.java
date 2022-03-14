@@ -10,27 +10,27 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetArena implements CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetArena(final Main main) {
+	public SetArena(final GucciPvP main) {
 		SetArena.plugin = main;
 	}
 
 	public boolean onCommand(final CommandSender Sender, final Command Cmd, final String Label, final String[] Args) {
 		final Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("SetArena") && !p.hasPermission("kitpvp.setarena")) {
-			p.sendMessage(Main.semperm);
+			p.sendMessage(GucciPvP.semperm);
 			return true;
 		}
 		if (Args.length == 0) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Ultilize /setarena 1 a 10");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Ultilize /setarena 1 a 10");
 			return true;
 		}
 		if (Args[0].equalsIgnoreCase("1")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena1.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena1.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena1.z", (Object) p.getLocation().getZ());
@@ -41,7 +41,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("2")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena2.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena2.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena2.z", (Object) p.getLocation().getZ());
@@ -52,7 +52,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("3")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena3.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena3.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena3.z", (Object) p.getLocation().getZ());
@@ -63,7 +63,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("4")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena4.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena4.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena4.z", (Object) p.getLocation().getZ());
@@ -74,7 +74,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("5")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena5.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena5.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena5.z", (Object) p.getLocation().getZ());
@@ -85,7 +85,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("6")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena6.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena6.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena6.z", (Object) p.getLocation().getZ());
@@ -96,7 +96,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("7")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena7.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena7.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena7.z", (Object) p.getLocation().getZ());
@@ -107,7 +107,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("8")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena8.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena8.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena8.z", (Object) p.getLocation().getZ());
@@ -118,7 +118,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("9")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena9.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena9.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena9.z", (Object) p.getLocation().getZ());
@@ -129,7 +129,7 @@ public class SetArena implements CommandExecutor {
 			SetArena.plugin.saveConfig();
 		}
 		if (Args[0].equalsIgnoreCase("10")) {
-			p.sendMessage(String.valueOf(Main.p) + "§7Voce setou a arena");
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce setou a arena");
 			SetArena.plugin.getConfig().set("Arena10.x", (Object) p.getLocation().getX());
 			SetArena.plugin.getConfig().set("Arena10.y", (Object) p.getLocation().getY());
 			SetArena.plugin.getConfig().set("Arena10.z", (Object) p.getLocation().getZ());

@@ -9,23 +9,23 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 import me.Pedro.ScoreBoard.Habilidade;
 
 public class Kit implements CommandExecutor, Listener {
-	public Kit(final Main main) {
+	public Kit(final GucciPvP main) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("kit")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.p) + "§7 Use /Kit [habilidade]");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7 Use /Kit [habilidade]");
 				return true;
 			}
 			if (KitAPI.Kit.contains(p.getName())) {
-				p.sendMessage(String.valueOf(Main.p) + "Voc\u00ea j\u00e1 esta usando um kit!");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "Voc\u00ea j\u00e1 esta usando um kit!");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("pvp")) {
@@ -37,9 +37,9 @@ public class Kit implements CommandExecutor, Listener {
 					SetArena.TeleportArenaRandom(p);
 					Habilidade.setAbility(p, "PvP");
 					KitAPI.Kit.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l PvP");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l PvP");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Forcefield")) {
@@ -52,10 +52,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Forcefield");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Forcefield.add(p.getName());
-					KitAPI.setitem(p, Material.IRON_FENCE, "§BForeField", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Forcefield");
+					KitAPI.setitem(p, Material.IRON_FENCE, "ï¿½BForeField", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Forcefield");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("C4")) {
@@ -68,10 +68,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "C4");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.C4.add(p.getName());
-					KitAPI.setitem(p, Material.SLIME_BALL, "§BC4", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l C4");
+					KitAPI.setitem(p, Material.SLIME_BALL, "ï¿½BC4", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l C4");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Avatar")) {
@@ -84,10 +84,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Avatar");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.avatar.add(p.getName());
-					KitAPI.setitem(p, Material.BEACON, "§BAvatar", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Avatar");
+					KitAPI.setitem(p, Material.BEACON, "ï¿½BAvatar", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Avatar");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Terrorista")) {
@@ -100,10 +100,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Terrorista");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Terrorista.add(p.getName());
-					KitAPI.setitem(p, Material.MAGMA_CREAM, "§BTerroristar", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Terrorista");
+					KitAPI.setitem(p, Material.MAGMA_CREAM, "ï¿½BTerroristar", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Terrorista");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("WaterBender")) {
@@ -116,10 +116,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "WaterBender");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.WaterBender.add(p.getName());
-					KitAPI.setitem(p, Material.LAPIS_BLOCK, "§BWaterBender", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l WaterBender");
+					KitAPI.setitem(p, Material.LAPIS_BLOCK, "ï¿½BWaterBender", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l WaterBender");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("DeshFire")) {
@@ -132,10 +132,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "DeshFire");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.DeshFire.add(p.getName());
-					KitAPI.setitem(p, Material.REDSTONE_BLOCK, "§BDeshFire", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l DeshFire");
+					KitAPI.setitem(p, Material.REDSTONE_BLOCK, "ï¿½BDeshFire", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l DeshFire");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("BloodGun")) {
@@ -148,10 +148,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "BloodGun");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.BloodGun.add(p.getName());
-					KitAPI.setitem(p, Material.WOOD_HOE, "§BBloodGun", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l BloodGun");
+					KitAPI.setitem(p, Material.WOOD_HOE, "ï¿½BBloodGun", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l BloodGun");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Velotrol")) {
@@ -164,10 +164,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Velotrol");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Velotrol.add(p.getName());
-					KitAPI.setitem(p, Material.MINECART, "§BVelotrol", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Velotrol");
+					KitAPI.setitem(p, Material.MINECART, "ï¿½BVelotrol", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Velotrol");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Grappler")) {
@@ -180,10 +180,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Grappler");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Grappler.add(p.getName());
-					KitAPI.setitem(p, Material.LEASH, "§BGrappler", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Grappler");
+					KitAPI.setitem(p, Material.LEASH, "ï¿½BGrappler", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Grappler");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("QuickDropper")) {
@@ -196,9 +196,9 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "QuickDropper");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.QuickDropper.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l QuickDropper");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l QuickDropper");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("FireBoost")) {
@@ -211,9 +211,9 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "FireBoost");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.FireBoost.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l FireBoost");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l FireBoost");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Kangaroo")) {
@@ -226,10 +226,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Kangaroo");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Kangaroo.add(p.getName());
-					KitAPI.setitem(p, Material.FIREWORK, "§BKangaroo", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Kangaroo");
+					KitAPI.setitem(p, Material.FIREWORK, "ï¿½BKangaroo", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Kangaroo");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Batman")) {
@@ -242,10 +242,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Batman");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Batman.add(p.getName());
-					KitAPI.setitem(p, Material.BLAZE_ROD, "§BBatman", 1, Enchantment.DAMAGE_ALL, 1, true);
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Batman");
+					KitAPI.setitem(p, Material.BLAZE_ROD, "ï¿½BBatman", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Batman");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Anchor")) {
@@ -258,9 +258,9 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Anchor");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Anchor.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Anchor");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Anchor");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Stomper")) {
@@ -273,9 +273,9 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Stomper");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Stomper.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Stomper");
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Stomper");
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Smoke")) {
@@ -288,10 +288,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Smoke");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Smoke.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Smoke");
-					KitAPI.setitem(p, Material.FLINT, "§BKit", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Smoke");
+					KitAPI.setitem(p, Material.FLINT, "ï¿½BKit", 1, Enchantment.DAMAGE_ALL, 1, true);
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 			if (args[0].equalsIgnoreCase("Foguinho")) {
@@ -304,10 +304,10 @@ public class Kit implements CommandExecutor, Listener {
 					Habilidade.setAbility(p, "Foguinho");
 					KitAPI.Kit.add(p.getName());
 					KitAPI.Foguinho.add(p.getName());
-					p.sendMessage(String.valueOf(Main.p) + "§7Voce pegou o Kit§a§l Foguinho");
-					KitAPI.setitem(p, Material.MAGMA_CREAM, "§BKit", 1, Enchantment.DAMAGE_ALL, 1, true);
+					p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voce pegou o Kitï¿½aï¿½l Foguinho");
+					KitAPI.setitem(p, Material.MAGMA_CREAM, "ï¿½BKit", 1, Enchantment.DAMAGE_ALL, 1, true);
 				} else {
-					p.sendMessage(Main.semperm);
+					p.sendMessage(GucciPvP.semperm);
 				}
 			}
 		}

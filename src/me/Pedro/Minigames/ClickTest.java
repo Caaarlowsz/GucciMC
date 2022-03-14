@@ -16,7 +16,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 
 public class ClickTest implements CommandExecutor, Listener {
@@ -27,7 +27,7 @@ public class ClickTest implements CommandExecutor, Listener {
 		ClickTest.sela = new ArrayList<Player>();
 	}
 
-	public ClickTest(final Main main) {
+	public ClickTest(final GucciPvP main) {
 	}
 
 	public static ClickTest getMain() {
@@ -39,20 +39,20 @@ public class ClickTest implements CommandExecutor, Listener {
 		final Player p = e.getPlayer();
 		if (ClickTest.sela.contains(p) && e.getAction() == Action.LEFT_CLICK_AIR) {
 			p.setLevel(p.getLevel() + 1);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							if (ClickTest.sela.contains(p)) {
 								ClickTest.sela.remove(p);
-								p.sendMessage(String.valueOf(Main.p) + "§7Voc\u00ea fez " + p.getLevel()
+								p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voc\u00ea fez " + p.getLevel()
 										+ " clicks em 10 segundos");
-								p.sendMessage(String.valueOf(Main.p) + "§7Voc\u00ea fez em media " + p.getLevel() / 10
+								p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Voc\u00ea fez em media " + p.getLevel() / 10
 										+ "  clicks por segundo!");
 								p.getInventory().clear();
-								KitAPI.setitem(p, Material.BOOK, "§3§lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
-								KitAPI.setitem(p, Material.COMPASS, "§3§lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
-								KitAPI.setitem(p, Material.CHEST, "§3§lKits", 4, Enchantment.SILK_TOUCH, 0, false);
+								KitAPI.setitem(p, Material.BOOK, "ï¿½3ï¿½lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
+								KitAPI.setitem(p, Material.COMPASS, "ï¿½3ï¿½lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
+								KitAPI.setitem(p, Material.CHEST, "ï¿½3ï¿½lKits", 4, Enchantment.SILK_TOUCH, 0, false);
 								p.teleport(p.getWorld().getSpawnLocation());
 								if (p.getLevel() >= 200) {
 									p.setBanned(true);
@@ -60,7 +60,7 @@ public class ClickTest implements CommandExecutor, Listener {
 							}
 						}
 					}, 200L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -77,46 +77,46 @@ public class ClickTest implements CommandExecutor, Listener {
 			p.setLevel(0);
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().clear();
-			p.sendMessage(String.valueOf(Main.p) + "§7O ClickTeste ir\u00e1 come\u00e7ar em 5 segundos");
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7O ClickTeste ir\u00e1 come\u00e7ar em 5 segundos");
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.sendMessage(
-									String.valueOf(Main.p) + "§7O ClickTeste ir\u00e1 come\u00e7ar em 4 segundos");
+									String.valueOf(GucciPvP.p) + "ï¿½7O ClickTeste ir\u00e1 come\u00e7ar em 4 segundos");
 						}
 					}, 20L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.sendMessage(
-									String.valueOf(Main.p) + "§7O ClickTeste ir\u00e1 come\u00e7ar em 3 segundos");
+									String.valueOf(GucciPvP.p) + "ï¿½7O ClickTeste ir\u00e1 come\u00e7ar em 3 segundos");
 						}
 					}, 40L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.sendMessage(
-									String.valueOf(Main.p) + "§7O ClickTeste ir\u00e1 come\u00e7ar em 2 segundos");
+									String.valueOf(GucciPvP.p) + "ï¿½7O ClickTeste ir\u00e1 come\u00e7ar em 2 segundos");
 						}
 					}, 60L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
-							p.sendMessage(String.valueOf(Main.p) + "§7O ClickTeste ir\u00e1 come\u00e7ar em 1 segundo");
+							p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7O ClickTeste ir\u00e1 come\u00e7ar em 1 segundo");
 						}
 					}, 80L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) GucciPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.sendMessage("  ");
 							p.sendMessage("  ");
-							p.sendMessage(String.valueOf(Main.p) + "§7O ClickTeste Come\u00e7ou");
-							p.sendMessage(String.valueOf(Main.p) + "§7§7Apenas os Clicks no Ar Ser\u00e3o Contados");
+							p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7O ClickTeste Come\u00e7ou");
+							p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7ï¿½7Apenas os Clicks no Ar Ser\u00e3o Contados");
 							p.sendMessage("  ");
 							p.sendMessage("  ");
 							ClickTest.sela.add(p);

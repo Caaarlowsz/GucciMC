@@ -5,12 +5,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetSpawn implements CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetSpawn(final Main main) {
+	public SetSpawn(final GucciPvP main) {
 		SetSpawn.plugin = main;
 	}
 
@@ -19,7 +19,7 @@ public class SetSpawn implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setspawn") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p2 = (Player) sender;
@@ -30,7 +30,7 @@ public class SetSpawn implements CommandExecutor {
 				SetSpawn.plugin.getConfig().set("spawn.yaw", (Object) p2.getLocation().getYaw());
 				SetSpawn.plugin.getConfig().set("spawn.world", (Object) p2.getLocation().getWorld().getName());
 				SetSpawn.plugin.saveConfig();
-				p2.sendMessage(String.valueOf(Main.p) + "§7Spawn setada com sucesso");
+				p2.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Spawn setada com sucesso");
 				p2.getWorld().setSpawnLocation(p2.getLocation().getBlockX(), p2.getLocation().getBlockY(),
 						p2.getLocation().getBlockZ());
 			}

@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Tempo {
 	public static HashMap<Player, Long> run;
@@ -31,7 +31,7 @@ public class Tempo {
 		final long cooldownLength = System.currentTimeMillis() + seconds * 1000;
 		Tempo.run.remove(p);
 		Tempo.run.put(p, cooldownLength);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				Tempo.run.remove(p);

@@ -12,17 +12,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Diamante implements Listener {
-	public static Main plugin;
+	public static GucciPvP plugin;
 	public static ArrayList<String> Diamante;
 
 	static {
 		iLucasUS.Pedro.Lauchers.Diamante.Diamante = new ArrayList<String>();
 	}
 
-	public Diamante(final Main main) {
+	public Diamante(final GucciPvP main) {
 		iLucasUS.Pedro.Lauchers.Diamante.plugin = main;
 	}
 

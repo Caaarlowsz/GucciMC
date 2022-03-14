@@ -5,11 +5,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 
 public class Minigames implements Listener {
-	public Minigames(final Main main) {
+	public Minigames(final GucciPvP main) {
 	}
 
 	public static void joinMinigame(final Player p, final ListGames minigame) {

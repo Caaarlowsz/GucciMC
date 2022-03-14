@@ -1,7 +1,24 @@
-package me.Pedro;
+package com.github.caaarlowsz.guccimc.kitpvp;
 
-import java.util.ArrayList;
-
+import com.github.caaarlowsz.kitpvpapi.KitPvP;
+import com.github.caaarlowsz.kitpvpapi.KitPvPAPI;
+import iLucasUS.Pedro.Lauchers.Diamante;
+import iLucasUS.Pedro.Lauchers.Esmeralda;
+import iLucasUS.Pedro.Lauchers.Ferro;
+import iLucasUS.Pedro.Lauchers.Redstone;
+import me.Pedro.CMD.*;
+import me.Pedro.Eventos.*;
+import me.Pedro.Inventarios.*;
+import me.Pedro.Minigames.ClickTest;
+import me.Pedro.Minigames.Minigames;
+import me.Pedro.Minigames.SetSpawn;
+import me.Pedro.ScoreBoard.Status;
+import me.Pedro.Ultis.Foguinho;
+import me.Pedro.Ultis.NÃ£oExplodirOMapa;
+import me.Pedro.Ultis.Smoke;
+import me.Pedro.Warps.*;
+import me.Pedro.XP.MyConfigManager;
+import me.Pedro.XP.XpM;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandExecutor;
@@ -12,74 +29,32 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import iLucasUS.Pedro.Lauchers.Diamante;
-import iLucasUS.Pedro.Lauchers.Esmeralda;
-import iLucasUS.Pedro.Lauchers.Ferro;
-import iLucasUS.Pedro.Lauchers.Redstone;
-import me.Pedro.CMD.Admin;
-import me.Pedro.CMD.Aplicar;
-import me.Pedro.CMD.Arena;
-import me.Pedro.CMD.AutoSoup;
-import me.Pedro.CMD.Build;
-import me.Pedro.CMD.Chat;
-import me.Pedro.CMD.Dano;
-import me.Pedro.CMD.Fake;
-import me.Pedro.CMD.Gamemode;
-import me.Pedro.CMD.Kit;
-import me.Pedro.CMD.MacroTest;
-import me.Pedro.CMD.Ping;
-import me.Pedro.CMD.Rankss;
-import me.Pedro.CMD.Regras;
-import me.Pedro.CMD.Report;
-import me.Pedro.CMD.SetArena;
-import me.Pedro.CMD.StaffChat;
-import me.Pedro.CMD.Tag;
-import me.Pedro.CMD.Tp;
-import me.Pedro.CMD.Tpall;
-import me.Pedro.CMD.Youtuber;
-import me.Pedro.CMD.sKit;
-import me.Pedro.Eventos.Abilidades;
-import me.Pedro.Eventos.ChatFormat;
-import me.Pedro.Eventos.DropEventos;
-import me.Pedro.Eventos.Ip;
-import me.Pedro.Eventos.KillEvent;
-import me.Pedro.Eventos.KitAPI;
-import me.Pedro.Eventos.Players;
-import me.Pedro.Eventos.Plugins;
-import me.Pedro.Eventos.Sopa;
-import me.Pedro.Eventos.Tab;
-import me.Pedro.Eventos.TheTitle;
-import me.Pedro.Inventarios.Kits;
-import me.Pedro.Inventarios.Menu;
-import me.Pedro.Inventarios.MenuDeWarps;
-import me.Pedro.Inventarios.MiniGamesInventario;
-import me.Pedro.Inventarios.Ranks;
-import me.Pedro.Minigames.ClickTest;
-import me.Pedro.Minigames.Minigames;
-import me.Pedro.Minigames.SetSpawn;
-import me.Pedro.ScoreBoard.Status;
-import me.Pedro.Ultis.Foguinho;
-import me.Pedro.Ultis.N\u00e3oExplodirOMapa;
-import me.Pedro.Ultis.Smoke;
-import me.Pedro.Warps.SetFPS;
-import me.Pedro.Warps.SetGlad;
-import me.Pedro.Warps.SetKnock;
-import me.Pedro.Warps.SetLavaChallenger;
-import me.Pedro.Warps.SetMlg;
-import me.Pedro.Warps.SetVoidChallenger;
-import me.Pedro.Warps.irFPS;
-import me.Pedro.Warps.irGlad;
-import me.Pedro.Warps.irKnock;
-import me.Pedro.Warps.irLavaFacil;
-import me.Pedro.Warps.irMlg;
-import me.Pedro.Warps.irSpawn;
-import me.Pedro.Warps.irVoid;
-import me.Pedro.XP.MyConfigManager;
-import me.Pedro.XP.XpM;
+import java.util.ArrayList;
 
-public class Main extends JavaPlugin {
+public class GucciPvP extends JavaPlugin implements KitPvP {
+
+	@Override
+	public void onEnable() {
+		super.onEnable();
+		KitPvPAPI.setInstance(this);
+
+		// TODO: Remover quando melhorar a classe principal
+		this.enable();
+	}
+
+	@Override
+	public void onDisable() {
+		super.onDisable();
+		KitPvPAPI.setInstance(null);
+
+		// TODO: Remover quando melhorar a  classe principal
+		this.disable();
+	}
+
+	// TODO: Melhorar a classe principal
+
 	public static Plugin plugin;
-	public static Main instance;
+	public static GucciPvP instance;
 	public static MyConfigManager manager;
 	public static Integer score;
 	public static String p;
@@ -87,28 +62,28 @@ public class Main extends JavaPlugin {
 	public static ArrayList<String> ss;
 
 	static {
-		Main.score = null;
-		Main.p = "§f§lGUCCI§6§lMC §7-";
-		Main.semperm = "§f§lGUCCI§6§lMC §7-";
+		GucciPvP.score = null;
+		GucciPvP.p = "ï¿½fï¿½lGUCCIï¿½6ï¿½lMC ï¿½7-";
+		GucciPvP.semperm = "ï¿½fï¿½lGUCCIï¿½6ï¿½lMC ï¿½7-";
 	}
 
-	public static Main getInstance() {
-		return Main.instance;
+	public static GucciPvP getInstance() {
+		return GucciPvP.instance;
 	}
 
 	public static Plugin getPlugin() {
-		return Main.plugin;
+		return GucciPvP.plugin;
 	}
 
-	public void onEnable() {
-		Bukkit.getServer().getConsoleSender().sendMessage(String.valueOf(Main.p) + "§A§lATIVADO");
+	public void enable() {
+		Bukkit.getServer().getConsoleSender().sendMessage(String.valueOf(GucciPvP.p) + "ï¿½Aï¿½lATIVADO");
 		this.saveDefaultConfig();
-		Main.instance = this;
-		Main.plugin = (Plugin) this;
+		GucciPvP.instance = this;
+		GucciPvP.plugin = (Plugin) this;
 		this.getConfig().options().copyDefaults(true);
 		this.getConfig().options().copyHeader(true);
 		this.saveConfig();
-		Main.manager = new MyConfigManager(this);
+		GucciPvP.manager = new MyConfigManager(this);
 		XpM.loadMoneyManager();
 		this.Eventos();
 		this.Comandos();
@@ -118,14 +93,14 @@ public class Main extends JavaPlugin {
 			all.teleport(all.getWorld().getSpawnLocation());
 			KitAPI.remove(all);
 			all.getInventory().clear();
-			KitAPI.setitem(all, Material.BOOK, "§3§lMenu", 5, Enchantment.SILK_TOUCH, 0, false);
-			KitAPI.setitem(all, Material.COMPASS, "§3§lWarps", 3, Enchantment.SILK_TOUCH, 0, false);
-			KitAPI.setitem(all, Material.CHEST, "§3§lKits", 4, Enchantment.SILK_TOUCH, 0, false);
+			KitAPI.setitem(all, Material.BOOK, "ï¿½3ï¿½lMenu", 5, Enchantment.SILK_TOUCH, 0, false);
+			KitAPI.setitem(all, Material.COMPASS, "ï¿½3ï¿½lWarps", 3, Enchantment.SILK_TOUCH, 0, false);
+			KitAPI.setitem(all, Material.CHEST, "ï¿½3ï¿½lKits", 4, Enchantment.SILK_TOUCH, 0, false);
 		}
 	}
 
-	public void onDisable() {
-		Bukkit.getServer().getConsoleSender().sendMessage(String.valueOf(Main.p) + "§4§lDESATIVADO");
+	public void disable() {
+		Bukkit.getServer().getConsoleSender().sendMessage(String.valueOf(GucciPvP.p) + "ï¿½4ï¿½lDESATIVADO");
 	}
 
 	public void Eventos() {
@@ -142,7 +117,7 @@ public class Main extends JavaPlugin {
 		FanntPvP.registerEvents((Listener) new Sopa(this), (Plugin) this);
 		FanntPvP.registerEvents((Listener) new DropEventos(), (Plugin) this);
 		FanntPvP.registerEvents((Listener) new Smoke(), (Plugin) this);
-		FanntPvP.registerEvents((Listener) new N\u00e3oExplodirOMapa(), (Plugin) this);
+		FanntPvP.registerEvents((Listener) new NÃ£oExplodirOMapa(), (Plugin) this);
 		FanntPvP.registerEvents((Listener) new KillEvent(), (Plugin) this);
 		FanntPvP.registerEvents((Listener) new StaffChat(), (Plugin) this);
 		FanntPvP.registerEvents((Listener) new Foguinho(), (Plugin) this);

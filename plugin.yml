@@ -1,6 +1,6 @@
 name: GUCCIPVP
 version: 1.0
-main: me.Pedro.Main
+main: com.github.caaarlowsz.guccimc.kitpvp.Main
 author: reacteey, iLucasUS
 descripition: Nada :D
 commands:

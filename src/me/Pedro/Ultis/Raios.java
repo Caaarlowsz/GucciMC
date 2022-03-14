@@ -4,7 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Raios {
 	public static double cos(final double i) {
@@ -37,7 +37,7 @@ public class Raios {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 3L);
+		}.runTaskTimer((Plugin) GucciPvP.instance, 0L, 3L);
 	}
 
 	public static void kitaguala(final Location loc) {
@@ -59,7 +59,7 @@ public class Raios {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 1L);
+		}.runTaskTimer((Plugin) GucciPvP.instance, 0L, 1L);
 	}
 
 	public static void arround(final Location loc) {
@@ -95,6 +95,6 @@ public class Raios {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 1L);
+		}.runTaskTimer((Plugin) GucciPvP.instance, 0L, 1L);
 	}
 }

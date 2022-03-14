@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import net.minecraft.server.v1_7_R4.EntityFishingHook;
 import net.minecraft.server.v1_7_R4.EntityHuman;
 import net.minecraft.server.v1_7_R4.EntitySnowball;
@@ -28,7 +28,7 @@ public class Cordinha extends EntityFishingHook implements Listener {
 	public boolean lastControllerDead;
 	public boolean isHooked;
 
-	public void Grappler(final Main plugin) {
+	public void Grappler(final GucciPvP plugin) {
 	}
 
 	public Cordinha(final World world, final EntityHuman entityhuman) {

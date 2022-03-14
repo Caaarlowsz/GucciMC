@@ -12,17 +12,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Ferro implements Listener {
-	public static Main plugin;
+	public static GucciPvP plugin;
 	public static ArrayList<String> Ferro;
 
 	static {
 		iLucasUS.Pedro.Lauchers.Ferro.Ferro = new ArrayList<String>();
 	}
 
-	public Ferro(final Main main) {
+	public Ferro(final GucciPvP main) {
 		iLucasUS.Pedro.Lauchers.Ferro.plugin = main;
 	}
 

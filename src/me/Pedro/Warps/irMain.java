@@ -15,12 +15,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class irMain implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public irMain(final Main main) {
+	public irMain(final GucciPvP main) {
 		irMain.plugin = main;
 	}
 
@@ -40,7 +40,7 @@ public class irMain implements Listener, CommandExecutor {
 			p.getInventory().clear();
 			final ItemStack espada = new ItemStack(Material.DIAMOND_SWORD);
 			final ItemMeta espadameta = espada.getItemMeta();
-			espadameta.setDisplayName("§cMain Sword");
+			espadameta.setDisplayName("ï¿½cMain Sword");
 			espada.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 			p.setFireTicks(0);
 			p.getInventory().setItem(0, espada);

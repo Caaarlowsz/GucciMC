@@ -2,7 +2,7 @@ package me.Pedro.XP;
 
 import org.bukkit.entity.Player;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class XpM {
 	public static MyConfig PlayerMoney;
@@ -13,7 +13,7 @@ public class XpM {
 	}
 
 	public static void loadMoneyManager() {
-		XpM.PlayerMoney = Main.manager.getNewConfig("XP.yml");
+		XpM.PlayerMoney = GucciPvP.manager.getNewConfig("XP.yml");
 	}
 
 	public static int getPlayerMoney(final Player p) {

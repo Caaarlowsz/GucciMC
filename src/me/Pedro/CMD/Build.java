@@ -13,7 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.TheTitle;
 import me.Pedro.ScoreBoard.Habilidade;
 
@@ -31,37 +31,37 @@ public final class Build implements Listener, CommandExecutor {
 				if (args.length == 0) {
 					if (!Build.embuild.contains(p)) {
 						Build.embuild.add(p);
-						p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Modo build §a§lATIVADO§7 !");
+						p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Modo build ï¿½aï¿½lATIVADOï¿½7 !");
 						Habilidade.setAbility(p, "Build");
-						TheTitle.sendTitle(p, "§c§lFannt§f§lMC");
-						TheTitle.sendSubTitle(p, "§7Build: §a§lON");
+						TheTitle.sendTitle(p, "ï¿½cï¿½lFanntï¿½fï¿½lMC");
+						TheTitle.sendSubTitle(p, "ï¿½7Build: ï¿½aï¿½lON");
 						p.setGameMode(GameMode.CREATIVE);
 					} else {
 						Build.embuild.remove(p);
-						p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Modo build §c§lDESATIVADO§7 !");
+						p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Modo build ï¿½cï¿½lDESATIVADOï¿½7 !");
 						Habilidade.setAbility(p, "Nenhum");
-						TheTitle.sendTitle(p, "§c§lFannt§f§lMC");
-						TheTitle.sendSubTitle(p, "§7Build: §c§lOFF");
+						TheTitle.sendTitle(p, "ï¿½cï¿½lFanntï¿½fï¿½lMC");
+						TheTitle.sendSubTitle(p, "ï¿½7Build: ï¿½cï¿½lOFF");
 						p.setGameMode(GameMode.SURVIVAL);
 					}
 				} else {
 					final Player t = Bukkit.getPlayer(args[0]);
 					if (t == null) {
-						p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Este jogador se encontra offline !");
+						p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Este jogador se encontra offline !");
 						return true;
 					}
 					if (!Build.embuild.contains(t)) {
 						Build.embuild.add(t);
-						p.sendMessage(String.valueOf(String.valueOf(Main.p))
-								+ " §7Voc\u00ea §aativou §7o modo build para o jogador: §b" + t.getName() + " §7!");
+						p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p))
+								+ " ï¿½7Voc\u00ea ï¿½aativou ï¿½7o modo build para o jogador: ï¿½b" + t.getName() + " ï¿½7!");
 					} else {
 						Build.embuild.remove(t);
-						p.sendMessage(String.valueOf(String.valueOf(Main.p))
-								+ " §7Voc\u00ea §cdesativou §7o modo build para o jogador: §b" + t.getName());
+						p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p))
+								+ " ï¿½7Voc\u00ea ï¿½cdesativou ï¿½7o modo build para o jogador: ï¿½b" + t.getName());
 					}
 				}
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 		}
 		return false;

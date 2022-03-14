@@ -10,7 +10,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class Habilidade1 implements Listener {
 	public static Map<String, String> powerMap;
@@ -19,7 +19,7 @@ public class Habilidade1 implements Listener {
 		Habilidade1.powerMap = new HashMap<String, String>();
 	}
 
-	public Habilidade1(final Main main) {
+	public Habilidade1(final GucciPvP main) {
 	}
 
 	public static String NomeDoKit(final String original) {

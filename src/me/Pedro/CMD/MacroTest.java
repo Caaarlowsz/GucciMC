@@ -13,7 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class MacroTest implements Listener, CommandExecutor {
 	static final HashMap<String, Integer> Clicks;
@@ -25,24 +25,24 @@ public class MacroTest implements Listener, CommandExecutor {
 	}
 
 	public static void testeMAcro(final Player p, final Player t) {
-		p.sendMessage("§e§lMACROTEST: §fTestando No Jogador: §b" + t.getName());
+		p.sendMessage("ï¿½eï¿½lMACROTEST: ï¿½fTestando No Jogador: ï¿½b" + t.getName());
 		MacroTest.macro.add(t.getName());
 		MacroTest.Clicks.put(t.getName(), 0);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
-				p.sendMessage("§c ");
-				p.sendMessage("                 §b§lMACROTEST              ");
-				p.sendMessage("§e» §bJogador: §7" + t.getName());
-				p.sendMessage("§e» §bTotal De Clicks: §7" + MacroTest.Clicks.get(t.getName()));
-				p.sendMessage("§e» §bClicks 5s: §7" + MacroTest.Clicks.get(t.getName()) / 2);
-				p.sendMessage("§e» §bClicks 1s: §7" + MacroTest.Clicks.get(t.getName()) / 10);
-				p.sendMessage("§c ");
+				p.sendMessage("ï¿½c ");
+				p.sendMessage("                 ï¿½bï¿½lMACROTEST              ");
+				p.sendMessage("ï¿½eï¿½ ï¿½bJogador: ï¿½7" + t.getName());
+				p.sendMessage("ï¿½eï¿½ ï¿½bTotal De Clicks: ï¿½7" + MacroTest.Clicks.get(t.getName()));
+				p.sendMessage("ï¿½eï¿½ ï¿½bClicks 5s: ï¿½7" + MacroTest.Clicks.get(t.getName()) / 2);
+				p.sendMessage("ï¿½eï¿½ ï¿½bClicks 1s: ï¿½7" + MacroTest.Clicks.get(t.getName()) / 10);
+				p.sendMessage("ï¿½c ");
 				MacroTest.macro.remove(t.getName());
 				if (MacroTest.Clicks.get(t.getName()) >= 250) {
 					t.setBanned(true);
-					t.kickPlayer("§c§lAUTOBAN§f:  §4§lMACRO §f!");
-					Bukkit.broadcastMessage("§c§lAUTOBAN: §f" + t.getName() + " §eFoi banido por §4§lMACRO!");
+					t.kickPlayer("ï¿½cï¿½lAUTOBANï¿½f:  ï¿½4ï¿½lMACRO ï¿½f!");
+					Bukkit.broadcastMessage("ï¿½cï¿½lAUTOBAN: ï¿½f" + t.getName() + " ï¿½eFoi banido por ï¿½4ï¿½lMACRO!");
 				}
 			}
 		}, 200L);
@@ -62,8 +62,8 @@ public class MacroTest implements Listener, CommandExecutor {
 		final Player p = (Player) Sender;
 		if (p.hasPermission("cmd.testmacro")) {
 			if (Args.length == 0) {
-				p.sendMessage(String.valueOf(String.valueOf("§1§lFANNT§f§lMC"))
-						+ " §7» §cErrado, Utilize a Sintaxe Correta: /testmacro (jogador)");
+				p.sendMessage(String.valueOf(String.valueOf("ï¿½1ï¿½lFANNTï¿½fï¿½lMC"))
+						+ " ï¿½7ï¿½ ï¿½cErrado, Utilize a Sintaxe Correta: /testmacro (jogador)");
 				return true;
 			}
 			final Player t = Bukkit.getPlayer(Args[0]);

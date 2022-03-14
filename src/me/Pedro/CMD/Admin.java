@@ -19,7 +19,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 import me.Pedro.ScoreBoard.Habilidade;
 
@@ -39,13 +39,13 @@ public class Admin implements CommandExecutor, Listener {
 			return true;
 		}
 		if (!sender.hasPermission("kitpvp.admin")) {
-			sender.sendMessage(String.valueOf(Main.p) + " §7Sem permiss\u00e3o !");
+			sender.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Sem permiss\u00e3o !");
 			return true;
 		}
 		final Player p = (Player) sender;
 		if (args.length == 0) {
 			if (!Habilidade.getAbility(p).equalsIgnoreCase("Admin")) {
-				p.sendMessage(String.valueOf(Main.p) + " §7Voc\u00ea §aentrou §7no modo §6§lADMIN §7!");
+				p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Voc\u00ea ï¿½aentrou ï¿½7no modo ï¿½6ï¿½lADMIN ï¿½7!");
 				Player[] onlinePlayers;
 				for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
 					final Player s = onlinePlayers[i];
@@ -61,22 +61,22 @@ public class Admin implements CommandExecutor, Listener {
 				p.updateInventory();
 				final ItemStack prender = new ItemStack(Material.IRON_FENCE);
 				final ItemMeta prendermeta = prender.getItemMeta();
-				prendermeta.setDisplayName("§b§lPrender");
+				prendermeta.setDisplayName("ï¿½bï¿½lPrender");
 				prender.setItemMeta(prendermeta);
 				final ItemStack troca = new ItemStack(Material.MAGMA_CREAM);
 				final ItemMeta trocameta = troca.getItemMeta();
-				trocameta.setDisplayName("§b§lTroca-Rapida");
+				trocameta.setDisplayName("ï¿½bï¿½lTroca-Rapida");
 				troca.setItemMeta(trocameta);
 				final ItemStack autosoup = new ItemStack(Material.MUSHROOM_SOUP);
 				final ItemMeta autosoupmeta = autosoup.getItemMeta();
-				autosoupmeta.setDisplayName("§b§lAuto-Soup");
+				autosoupmeta.setDisplayName("ï¿½bï¿½lAuto-Soup");
 				autosoup.setItemMeta(autosoupmeta);
 				p.getInventory().setItem(7, prender);
 				p.getInventory().setItem(4, troca);
 				p.getInventory().setItem(1, autosoup);
 				p.updateInventory();
 			} else {
-				p.sendMessage(String.valueOf(Main.p) + " §7Voc\u00ea §csaiu §7no modo §6§lADMIN §7!");
+				p.sendMessage(String.valueOf(GucciPvP.p) + " ï¿½7Voc\u00ea ï¿½csaiu ï¿½7no modo ï¿½6ï¿½lADMIN ï¿½7!");
 				p.getInventory().clear();
 				Habilidade.setAbility(p, "Nenhum");
 				KitAPI.remove(p);
@@ -129,11 +129,11 @@ public class Admin implements CommandExecutor, Listener {
 			p.setGameMode(GameMode.SURVIVAL);
 			final ItemStack troca = new ItemStack(Material.SLIME_BALL);
 			final ItemMeta trocameta = troca.getItemMeta();
-			trocameta.setDisplayName("§b§lTroca-Rapida");
+			trocameta.setDisplayName("ï¿½bï¿½lTroca-Rapida");
 			troca.setItemMeta(trocameta);
 			p.getInventory().setItem(4, troca);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Player[] onlinePlayers;
@@ -146,7 +146,7 @@ public class Admin implements CommandExecutor, Listener {
 					p.setGameMode(GameMode.CREATIVE);
 					final ItemStack troca = new ItemStack(Material.MAGMA_CREAM);
 					final ItemMeta trocameta = troca.getItemMeta();
-					trocameta.setDisplayName("§b§lTroca-Rapida");
+					trocameta.setDisplayName("ï¿½bï¿½lTroca-Rapida");
 					troca.setItemMeta(trocameta);
 					p.getInventory().setItem(4, troca);
 					p.updateInventory();

@@ -12,14 +12,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.KitAPI;
 import me.Pedro.ScoreBoard.Habilidade;
 
 public class irSpawn implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public irSpawn(final Main main) {
+	public irSpawn(final GucciPvP main) {
 		irSpawn.plugin = main;
 	}
 
@@ -49,9 +49,9 @@ public class irSpawn implements Listener, CommandExecutor {
 			p.getInventory().clear();
 			p.setMaxHealth(20);
 			p.setHealth(20.0);
-			KitAPI.setitem(p, Material.BOOK, "§3§lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
-			KitAPI.setitem(p, Material.COMPASS, "§3§lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
-			KitAPI.setitem(p, Material.CHEST, "§3§lKits", 4, Enchantment.SILK_TOUCH, 0, false);
+			KitAPI.setitem(p, Material.BOOK, "ï¿½3ï¿½lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
+			KitAPI.setitem(p, Material.COMPASS, "ï¿½3ï¿½lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
+			KitAPI.setitem(p, Material.CHEST, "ï¿½3ï¿½lKits", 4, Enchantment.SILK_TOUCH, 0, false);
 		}
 		return false;
 	}

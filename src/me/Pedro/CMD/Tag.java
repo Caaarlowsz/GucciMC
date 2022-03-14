@@ -8,11 +8,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 import ca.wacos.nametagedit.NametagAPI;
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Eventos.ChatAPI;
 
 public class Tag implements Listener, CommandExecutor {
-	public Tag(final Main main) {
+	public Tag(final GucciPvP main) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -24,246 +24,246 @@ public class Tag implements Listener, CommandExecutor {
 			if (args[0].equalsIgnoreCase("normal")) {
 				if (p.hasPermission("tag.normal")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §7§lNORMAL §7!");
-					p.setDisplayName("§7§lNORMAL §7" + p.getName());
-					p.setPlayerListName("§7" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§7§lNORMAL §7");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½7ï¿½lNORMAL ï¿½7!");
+					p.setDisplayName("ï¿½7ï¿½lNORMAL ï¿½7" + p.getName());
+					p.setPlayerListName("ï¿½7" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½7ï¿½lNORMAL ï¿½7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("pro")) {
 				if (p.hasPermission("tag.pro")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §6§lPRO §7!");
-					p.setDisplayName("§6§lVIP §6" + p.getName());
-					p.setPlayerListName("§6" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§6§lPRO §6");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½6ï¿½lPRO ï¿½7!");
+					p.setDisplayName("ï¿½6ï¿½lVIP ï¿½6" + p.getName());
+					p.setPlayerListName("ï¿½6" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½6ï¿½lPRO ï¿½6");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("pro")) {
 				if (p.hasPermission("tag.pro")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §6§lPRO §7!");
-					p.setDisplayName("§6§lVIP §6" + p.getName());
-					p.setPlayerListName("§6" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§6§lPRO §6");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½6ï¿½lPRO ï¿½7!");
+					p.setDisplayName("ï¿½6ï¿½lVIP ï¿½6" + p.getName());
+					p.setPlayerListName("ï¿½6" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½6ï¿½lPRO ï¿½6");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("builder")) {
 				if (p.hasPermission("tag.builder")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §9§lBUILDER §7!");
-					p.setDisplayName("§9§lBUILDER §9" + p.getName());
-					p.setPlayerListName("§9" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§9§lBUILDER §9");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½9ï¿½lBUILDER ï¿½7!");
+					p.setDisplayName("ï¿½9ï¿½lBUILDER ï¿½9" + p.getName());
+					p.setPlayerListName("ï¿½9" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½9ï¿½lBUILDER ï¿½9");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("mvp")) {
 				if (p.hasPermission("tag.mvp")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §9§lMVP §7!");
-					p.setDisplayName("§9§lMVP §9" + p.getName());
-					p.setPlayerListName("§9" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§9§lMVP §9");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½9ï¿½lMVP ï¿½7!");
+					p.setDisplayName("ï¿½9ï¿½lMVP ï¿½9" + p.getName());
+					p.setPlayerListName("ï¿½9" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½9ï¿½lMVP ï¿½9");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("yt")) {
 				if (p.hasPermission("tag.yt")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §b§lYT §7!");
-					p.setDisplayName("§b§lYT §b" + p.getName());
-					p.setPlayerListName("§b" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§b§lYT §b");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½bï¿½lYT ï¿½7!");
+					p.setDisplayName("ï¿½bï¿½lYT ï¿½b" + p.getName());
+					p.setPlayerListName("ï¿½b" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½bï¿½lYT ï¿½b");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("trial")) {
 				if (p.hasPermission("tag.trial")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §d§lTRIAL §7!");
-					p.setDisplayName("§d§lTRIAL §d" + p.getName());
-					p.setPlayerListName("§d" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§d§lTRIAL §d");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½dï¿½lTRIAL ï¿½7!");
+					p.setDisplayName("ï¿½dï¿½lTRIAL ï¿½d" + p.getName());
+					p.setPlayerListName("ï¿½d" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½dï¿½lTRIAL ï¿½d");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("tk")) {
 				if (p.hasPermission("tag.tk")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §e§lTK §7!");
-					p.setDisplayName("§e§lTK §e" + p.getName());
-					p.setPlayerListName("§e" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§e§lTK §e");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½eï¿½lTK ï¿½7!");
+					p.setDisplayName("ï¿½eï¿½lTK ï¿½e" + p.getName());
+					p.setPlayerListName("ï¿½e" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½eï¿½lTK ï¿½e");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("copa")) {
 				if (p.hasPermission("tag.copa")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §e§lCOPA §7!");
-					p.setDisplayName("§e§lCOPA §e" + p.getName());
-					p.setPlayerListName("§e" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§e§lCOPA §e");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½eï¿½lCOPA ï¿½7!");
+					p.setDisplayName("ï¿½eï¿½lCOPA ï¿½e" + p.getName());
+					p.setPlayerListName("ï¿½e" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½eï¿½lCOPA ï¿½e");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("mod")) {
 				if (p.hasPermission("tag.mod")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §5§lMOD §7!");
-					p.setDisplayName("§5§lMOD §5" + p.getName());
-					p.setPlayerListName("§5" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§5§lMOD §5");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½5ï¿½lMOD ï¿½7!");
+					p.setDisplayName("ï¿½5ï¿½lMOD ï¿½5" + p.getName());
+					p.setPlayerListName("ï¿½5" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½5ï¿½lMOD ï¿½5");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("mod+")) {
 				if (p.hasPermission("tag.mod+")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §5§lMOD+ §7!");
-					p.setDisplayName("§5§lMOD+ §5" + p.getName());
-					p.setPlayerListName("§5" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§5§lMOD+ §5");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½5ï¿½lMOD+ ï¿½7!");
+					p.setDisplayName("ï¿½5ï¿½lMOD+ ï¿½5" + p.getName());
+					p.setPlayerListName("ï¿½5" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½5ï¿½lMOD+ ï¿½5");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("admin")) {
 				if (p.hasPermission("tag.admin")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §c§lADMIN §7!");
-					p.setDisplayName("§c§lADMIN §c" + p.getName());
-					p.setPlayerListName("§c" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§c§lADMIN §c");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½cï¿½lADMIN ï¿½7!");
+					p.setDisplayName("ï¿½cï¿½lADMIN ï¿½c" + p.getName());
+					p.setPlayerListName("ï¿½c" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½cï¿½lADMIN ï¿½c");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("ajudante")) {
 				if (p.hasPermission("tag.ajudante")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §e§lAJUDANTE §7!");
-					p.setDisplayName("§e§lAJUDANTE §e" + p.getName());
-					p.setPlayerListName("§e" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§e§lAJUDANTE §e");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½eï¿½lAJUDANTE ï¿½7!");
+					p.setDisplayName("ï¿½eï¿½lAJUDANTE ï¿½e" + p.getName());
+					p.setPlayerListName("ï¿½e" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½eï¿½lAJUDANTE ï¿½e");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("vip")) {
 				if (p.hasPermission("tag.vip")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §a§lVIP §7!");
-					p.setDisplayName("§a§lVIP §a" + p.getName());
-					p.setPlayerListName("§a" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§a§lVIP §a");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½aï¿½lVIP ï¿½7!");
+					p.setDisplayName("ï¿½aï¿½lVIP ï¿½a" + p.getName());
+					p.setPlayerListName("ï¿½a" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½aï¿½lVIP ï¿½a");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("spro")) {
 				if (p.hasPermission("tag.spro")) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §6§lSPRO §7!");
-					p.setDisplayName("§6§lSPRO §6" + p.getName());
-					p.setPlayerListName("§6" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§6§lSPRO §6");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½6ï¿½lSPRO ï¿½7!");
+					p.setDisplayName("ï¿½6ï¿½lSPRO ï¿½6" + p.getName());
+					p.setPlayerListName("ï¿½6" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½6ï¿½lSPRO ï¿½6");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("dona")) {
 				if (p.hasPermission("tag.dona")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.p))
-							+ " §7Sua tag foi alterada para: §4§lDONA SUA LINDA §7!");
-					p.setDisplayName("§4§lDONA §4" + p.getName());
-					p.setPlayerListName("§4" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§4§lDONA §4");
+					p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p))
+							+ " ï¿½7Sua tag foi alterada para: ï¿½4ï¿½lDONA SUA LINDA ï¿½7!");
+					p.setDisplayName("ï¿½4ï¿½lDONA ï¿½4" + p.getName());
+					p.setPlayerListName("ï¿½4" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½4ï¿½lDONA ï¿½4");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			if (args[0].equalsIgnoreCase("fundador")) {
 				if (p.hasPermission("tag.fundador")) {
 					if (!p.getName().equals("reacteey") && p.getName() != "reacteey") {
-						p.sendMessage("§4§lTAG §a» §fVoc\u00ea, n\u00e3o \u00e9 o §3§lFUNDADOR!");
-						p.sendMessage("§4§lTAG §a» §7Kickando em 2 Segundos!");
-						Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin,
+						p.sendMessage("ï¿½4ï¿½lTAG ï¿½aï¿½ ï¿½fVoc\u00ea, n\u00e3o \u00e9 o ï¿½3ï¿½lFUNDADOR!");
+						p.sendMessage("ï¿½4ï¿½lTAG ï¿½aï¿½ ï¿½7Kickando em 2 Segundos!");
+						Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(GucciPvP.plugin,
 								(Runnable) new Runnable() {
 									@Override
 									public void run() {
 										p.kickPlayer(
-												"§c§lMODERADOR §7- §fVoc\u00ea, n\u00e3o \u00e9 o §3§lFUNDADOR §fdeste servidor!");
+												"ï¿½cï¿½lMODERADOR ï¿½7- ï¿½fVoc\u00ea, n\u00e3o \u00e9 o ï¿½3ï¿½lFUNDADOR ï¿½fdeste servidor!");
 									}
 								}, 60L);
 					}
 					p.sendMessage(
-							String.valueOf(String.valueOf(Main.p)) + " §7Sua tag foi alterada para: §3§lFUNDADOR §7!");
-					p.setDisplayName("§3§lFUNDADOR §3" + p.getName());
-					p.setPlayerListName("§3" + getShortStr(p.getName()));
-					NametagAPI.setPrefix(p.getName(), "§3§lFUNDADOR §3");
+							String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sua tag foi alterada para: ï¿½3ï¿½lFUNDADOR ï¿½7!");
+					p.setDisplayName("ï¿½3ï¿½lFUNDADOR ï¿½3" + p.getName());
+					p.setPlayerListName("ï¿½3" + getShortStr(p.getName()));
+					NametagAPI.setPrefix(p.getName(), "ï¿½3ï¿½lFUNDADOR ï¿½3");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Sem permiss\u00e3o !");
+				p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Sem permiss\u00e3o !");
 			}
 			return false;
 		}
 		if (p.hasPermission("tag.normal")) {
 			p.sendMessage(" ");
-			p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Suas tags:");
+			p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Suas tags:");
 			p.sendMessage(" ");
-			ChatAPI.Comando(p.getName(), "§7§lNORMAL", "/tag normal", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+			ChatAPI.Comando(p.getName(), "ï¿½7ï¿½lNORMAL", "/tag normal", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			if (p.hasPermission("tag.pro")) {
-				ChatAPI.Comando(p.getName(), "§6§lPRO", "/tag pro", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½6ï¿½lPRO", "/tag pro", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.builder")) {
-				ChatAPI.Comando(p.getName(), "§9§lBUILDER", "/tag builder", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½9ï¿½lBUILDER", "/tag builder", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.mvp")) {
-				ChatAPI.Comando(p.getName(), "§9§lMVP", "/tag mvp", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½9ï¿½lMVP", "/tag mvp", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.yt")) {
-				ChatAPI.Comando(p.getName(), "§b§lYT", "/tag yt", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½bï¿½lYT", "/tag yt", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.trial")) {
-				ChatAPI.Comando(p.getName(), "§d§lTRIAL", "/tag trial", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½dï¿½lTRIAL", "/tag trial", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.tk")) {
-				ChatAPI.Comando(p.getName(), "§e§lTK", "/tag tk", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½eï¿½lTK", "/tag tk", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.copa")) {
-				ChatAPI.Comando(p.getName(), "§e§lCOPA", "/tag copa", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½eï¿½lCOPA", "/tag copa", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.mod")) {
-				ChatAPI.Comando(p.getName(), "§5§lMOD", "/tag mod", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½5ï¿½lMOD", "/tag mod", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.mod+")) {
-				ChatAPI.Comando(p.getName(), "§5§lMOD+", "/tag mod+", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½5ï¿½lMOD+", "/tag mod+", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.admin")) {
-				ChatAPI.Comando(p.getName(), "§c§lADMIN", "/tag admin", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½cï¿½lADMIN", "/tag admin", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.ajudante")) {
-				ChatAPI.Comando(p.getName(), "§e§lAJUDANTE", "/tag ajudante", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½eï¿½lAJUDANTE", "/tag ajudante", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.vip")) {
-				ChatAPI.Comando(p.getName(), "§a§lVIP", "/tag vip", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½aï¿½lVIP", "/tag vip", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.spro")) {
-				ChatAPI.Comando(p.getName(), "§6§lSPRO", "/tag spro", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½6ï¿½lSPRO", "/tag spro", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.dono")) {
-				ChatAPI.Comando(p.getName(), "§4§lDONO", "/tag dono", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½4ï¿½lDONO", "/tag dono", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 			if (p.hasPermission("tag.fundador")) {
-				ChatAPI.Comando(p.getName(), "§3§lFUNDADOR", "/tag fundador", "§7Clique (§bbot\u00e3o esquerdo§7) !");
+				ChatAPI.Comando(p.getName(), "ï¿½3ï¿½lFUNDADOR", "/tag fundador", "ï¿½7Clique (ï¿½bbot\u00e3o esquerdoï¿½7) !");
 			}
 		}
 		return false;

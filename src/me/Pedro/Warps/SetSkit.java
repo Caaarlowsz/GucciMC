@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetSkit implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetSkit(final Main main) {
+	public SetSkit(final GucciPvP main) {
 		SetSkit.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetSkit implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setskit") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setskit")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetSkit implements Listener, CommandExecutor {
 				SetSkit.plugin.getConfig().set("skit.yaw", (Object) p.getLocation().getYaw());
 				SetSkit.plugin.getConfig().set("skit.world", (Object) p.getLocation().getWorld().getName());
 				SetSkit.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.p) + "§7Warp §b§lSKIT §7setada com §3sucesso!");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp ï¿½bï¿½lSKIT ï¿½7setada com ï¿½3sucesso!");
 			}
 			return true;
 		}

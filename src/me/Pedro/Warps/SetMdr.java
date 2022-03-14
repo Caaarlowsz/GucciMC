@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 
 public class SetMdr implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static GucciPvP plugin;
 
-	public SetMdr(final Main main) {
+	public SetMdr(final GucciPvP main) {
 		SetMdr.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetMdr implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setmdr") && sender instanceof Player) {
 			if (!sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(Main.semperm);
+				p.sendMessage(GucciPvP.semperm);
 			}
 			if (sender.hasPermission("kitpvp.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetMdr implements Listener, CommandExecutor {
 				SetMdr.plugin.getConfig().set("mdr.yaw", (Object) p.getLocation().getYaw());
 				SetMdr.plugin.getConfig().set("mdr.world", (Object) p.getLocation().getWorld().getName());
 				SetMdr.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.p) + "§7Warp §b§lMDR §fsetada com sucesso");
+				p.sendMessage(String.valueOf(GucciPvP.p) + "ï¿½7Warp ï¿½bï¿½lMDR ï¿½fsetada com sucesso");
 			}
 			return true;
 		}

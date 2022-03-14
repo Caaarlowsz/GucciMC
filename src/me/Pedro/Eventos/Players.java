@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
 import ca.wacos.nametagedit.NametagAPI;
-import me.Pedro.Main;
+import com.github.caaarlowsz.guccimc.kitpvp.GucciPvP;
 import me.Pedro.Inventarios.Kits;
 import me.Pedro.Inventarios.Ranks;
 import me.Pedro.ScoreBoard.ScoreboardLibs;
@@ -27,7 +27,7 @@ public class Players implements Listener {
 	static {
 	}
 
-	public Players(final Main main) {
+	public Players(final GucciPvP main) {
 	}
 
 	@EventHandler
@@ -39,86 +39,86 @@ public class Players implements Listener {
 		KitAPI.remove(p);
 		p.getInventory().clear();
 		ScoreboardLibs.iniciarScoreboard(p);
-		TheTitle.sendTitle(p, "§3§lFannt§f§lMC");
-		TheTitle.sendSubTitle(p, "§7Bem vindo - §c" + p.getName());
-		p.sendMessage("  §3§lFannt§f§lMC  ");
+		TheTitle.sendTitle(p, "ï¿½3ï¿½lFanntï¿½fï¿½lMC");
+		TheTitle.sendSubTitle(p, "ï¿½7Bem vindo - ï¿½c" + p.getName());
+		p.sendMessage("  ï¿½3ï¿½lFanntï¿½fï¿½lMC  ");
 		p.sendMessage("");
-		p.sendMessage("§7Bem vindo ao nosso servidor!");
-		p.sendMessage("§7Todo trabalho, pela sua divers\u00e3o.");
-		p.sendMessage("§7Hackers ou bugs, reporte a §3§lSTAFF.");
+		p.sendMessage("ï¿½7Bem vindo ao nosso servidor!");
+		p.sendMessage("ï¿½7Todo trabalho, pela sua divers\u00e3o.");
+		p.sendMessage("ï¿½7Hackers ou bugs, reporte a ï¿½3ï¿½lSTAFF.");
 		p.sendMessage("");
-		KitAPI.setitem(p, Material.BOOK, "§3§lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
-		KitAPI.setitem(p, Material.COMPASS, "§3§lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
-		KitAPI.setitem(p, Material.CHEST, "§3§lKits", 4, Enchantment.SILK_TOUCH, 0, false);
+		KitAPI.setitem(p, Material.BOOK, "ï¿½3ï¿½lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
+		KitAPI.setitem(p, Material.COMPASS, "ï¿½3ï¿½lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
+		KitAPI.setitem(p, Material.CHEST, "ï¿½3ï¿½lKits", 4, Enchantment.SILK_TOUCH, 0, false);
 		if (PermissionsEx.getUser(p).inGroup("default")) {
-			p.setDisplayName("§c§lNATAL §c" + p.getName());
-			p.setPlayerListName("§c" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§c§lNATAL §c");
+			p.setDisplayName("ï¿½cï¿½lNATAL ï¿½c" + p.getName());
+			p.setPlayerListName("ï¿½c" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½cï¿½lNATAL ï¿½c");
 		}
 		if (PermissionsEx.getUser(p).inGroup("pro")) {
-			p.setDisplayName("§6§lPRO §6" + p.getName());
-			p.setPlayerListName("§6" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§6§lPRO §6");
+			p.setDisplayName("ï¿½6ï¿½lPRO ï¿½6" + p.getName());
+			p.setPlayerListName("ï¿½6" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½6ï¿½lPRO ï¿½6");
 		}
 		if (PermissionsEx.getUser(p).inGroup("builder")) {
-			p.setDisplayName("§9§lBUILDER §9" + p.getName());
-			p.setPlayerListName("§9" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§9§lBUILDER §9");
+			p.setDisplayName("ï¿½9ï¿½lBUILDER ï¿½9" + p.getName());
+			p.setPlayerListName("ï¿½9" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½9ï¿½lBUILDER ï¿½9");
 		}
 		if (PermissionsEx.getUser(p).inGroup("mvp")) {
-			p.setDisplayName("§9§lMVP §9" + p.getName());
-			p.setPlayerListName("§9" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§9§lMVP §9");
+			p.setDisplayName("ï¿½9ï¿½lMVP ï¿½9" + p.getName());
+			p.setPlayerListName("ï¿½9" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½9ï¿½lMVP ï¿½9");
 		}
 		if (PermissionsEx.getUser(p).inGroup("yt")) {
-			p.setDisplayName("§b§lYT §b" + p.getName());
-			p.setPlayerListName("§b" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§b§lYT §b");
+			p.setDisplayName("ï¿½bï¿½lYT ï¿½b" + p.getName());
+			p.setPlayerListName("ï¿½b" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½bï¿½lYT ï¿½b");
 		}
 		if (PermissionsEx.getUser(p).inGroup("trial")) {
-			p.setDisplayName("§d§lTRIAL §d" + p.getName());
-			p.setPlayerListName("§d" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§d§lTRIAL §d");
+			p.setDisplayName("ï¿½dï¿½lTRIAL ï¿½d" + p.getName());
+			p.setPlayerListName("ï¿½d" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½dï¿½lTRIAL ï¿½d");
 		}
 		if (PermissionsEx.getUser(p).inGroup("tk")) {
-			p.setDisplayName("§7§lTK §7" + p.getName());
-			p.setPlayerListName("§7" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§7§lTK §7");
+			p.setDisplayName("ï¿½7ï¿½lTK ï¿½7" + p.getName());
+			p.setPlayerListName("ï¿½7" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½7ï¿½lTK ï¿½7");
 		}
 		if (PermissionsEx.getUser(p).inGroup("mod")) {
-			p.setDisplayName("§5§lMOD §5" + p.getName());
-			p.setPlayerListName("§5" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§5§lMOD §5");
+			p.setDisplayName("ï¿½5ï¿½lMOD ï¿½5" + p.getName());
+			p.setPlayerListName("ï¿½5" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½5ï¿½lMOD ï¿½5");
 		}
 		if (PermissionsEx.getUser(p).inGroup("mod+")) {
-			p.setDisplayName("§5§lMOD+ §5" + p.getName());
-			p.setPlayerListName("§5" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§5§lMOD+ §5");
+			p.setDisplayName("ï¿½5ï¿½lMOD+ ï¿½5" + p.getName());
+			p.setPlayerListName("ï¿½5" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½5ï¿½lMOD+ ï¿½5");
 		}
 		if (PermissionsEx.getUser(p).inGroup("ajudante")) {
-			p.setDisplayName("§e§lAJUDANTE §e" + p.getName());
-			p.setPlayerListName("§e" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§e§lAJUDANTE §e");
+			p.setDisplayName("ï¿½eï¿½lAJUDANTE ï¿½e" + p.getName());
+			p.setPlayerListName("ï¿½e" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½eï¿½lAJUDANTE ï¿½e");
 		}
 		if (PermissionsEx.getUser(p).inGroup("vip")) {
-			p.setDisplayName("§a§lVIP §a" + p.getName());
-			p.setPlayerListName("§a" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§a§lVIP §a");
+			p.setDisplayName("ï¿½aï¿½lVIP ï¿½a" + p.getName());
+			p.setPlayerListName("ï¿½a" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½aï¿½lVIP ï¿½a");
 		}
 		if (PermissionsEx.getUser(p).inGroup("spro")) {
-			p.setDisplayName("§6§lSPRO §6" + p.getName());
-			p.setPlayerListName("§6" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§6§lSPRO §6");
+			p.setDisplayName("ï¿½6ï¿½lSPRO ï¿½6" + p.getName());
+			p.setPlayerListName("ï¿½6" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½6ï¿½lSPRO ï¿½6");
 		}
 		if (PermissionsEx.getUser(p).inGroup("dono")) {
-			p.setDisplayName("§4§lDONO §4" + p.getName());
-			p.setPlayerListName("§4" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§4§lDONO §4");
+			p.setDisplayName("ï¿½4ï¿½lDONO ï¿½4" + p.getName());
+			p.setPlayerListName("ï¿½4" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½4ï¿½lDONO ï¿½4");
 		}
 		if (p.getName().equals("reacteey")) {
-			p.setDisplayName("§3§lFUNDADOR §3" + p.getName());
-			p.setPlayerListName("§3" + getShortStr(p.getName()));
-			NametagAPI.setPrefix(p.getName(), "§3§lFUNDADOR §3");
+			p.setDisplayName("ï¿½3ï¿½lFUNDADOR ï¿½3" + p.getName());
+			p.setPlayerListName("ï¿½3" + getShortStr(p.getName()));
+			NametagAPI.setPrefix(p.getName(), "ï¿½3ï¿½lFUNDADOR ï¿½3");
 		}
 	}
 
@@ -127,10 +127,10 @@ public class Players implements Listener {
 		final Player p = e.getEntity();
 		if (p.getKiller() instanceof Player) {
 			final Player k = p.getKiller();
-			TheTitle.sendTitle(k, "§c§lFaant§f§lMC");
-			TheTitle.sendSubTitle(k, "§7Morreu para: §c" + k.getName());
-			p.sendMessage(String.valueOf(String.valueOf(Main.p)) + " §7Voc\u00ea foi §cmorto §7por: §b" + k.getName()
-					+ " §7!");
+			TheTitle.sendTitle(k, "ï¿½cï¿½lFaantï¿½fï¿½lMC");
+			TheTitle.sendSubTitle(k, "ï¿½7Morreu para: ï¿½c" + k.getName());
+			p.sendMessage(String.valueOf(String.valueOf(GucciPvP.p)) + " ï¿½7Voc\u00ea foi ï¿½cmorto ï¿½7por: ï¿½b" + k.getName()
+					+ " ï¿½7!");
 			KitAPI.remove(p);
 			KitAPI.Kit.remove(p.getName());
 		}
@@ -147,9 +147,9 @@ public class Players implements Listener {
 		final Player p = e.getPlayer();
 		p.getInventory().clear();
 		KitAPI.remove(p);
-		KitAPI.setitem(p, Material.BOOK, "§3§lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
-		KitAPI.setitem(p, Material.COMPASS, "§3§lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
-		KitAPI.setitem(p, Material.CHEST, "§3§lKits", 4, Enchantment.SILK_TOUCH, 0, false);
+		KitAPI.setitem(p, Material.BOOK, "ï¿½3ï¿½lMenu", 3, Enchantment.SILK_TOUCH, 0, false);
+		KitAPI.setitem(p, Material.COMPASS, "ï¿½3ï¿½lWarps", 5, Enchantment.SILK_TOUCH, 0, false);
+		KitAPI.setitem(p, Material.CHEST, "ï¿½3ï¿½lKits", 4, Enchantment.SILK_TOUCH, 0, false);
 	}
 
 	@EventHandler
@@ -173,7 +173,7 @@ public class Players implements Listener {
 		final Player jogador = evento.getPlayer();
 		if (jogador.getItemInHand().getType().equals((Object) Material.CHEST)
 				&& jogador.getItemInHand().getItemMeta().hasDisplayName()) {
-			if (jogador.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§3§lKits")) {
+			if (jogador.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½3ï¿½lKits")) {
 				evento.setCancelled(true);
 			}
 			if (evento.getAction() == Action.RIGHT_CLICK_AIR) {
